@@ -1,0 +1,3129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mecanismo 6D — Presencial · São Paulo · 11 e 12 de Abril</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<style>
+:root {
+  --linen:    #F7F4EE;
+  --linen2:   #F0EDE5;
+  --linen3:   #E8E3D8;
+  --linen4:   #DDD7C8;
+  --stone:    #9A9488;
+  --stone2:   #6B6558;
+  --ink:      #1E1C18;
+  --ink2:     #2E2C27;
+  --moss:     #4A5240;
+  --moss2:    #6B7560;
+  --gold:     #8C7A4A;
+  --gold2:    #B09A62;
+  --serif:    'Plus Jakarta Sans', sans-serif;
+  --subhead:  'Reenie Beanie', cursive;
+  --sans:     'Plus Jakarta Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--linen);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade { opacity: 1; }
+.fade.visible { opacity: 1; }
+
+.container { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+.container-wide { max-width: 880px; margin: 0 auto; padding: 0 32px; }
+
+.announce {
+  background: var(--ink);
+  color: rgba(247,244,238,0.5);
+  text-align: center;
+  padding: 12px 24px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.announce em { color: rgba(247,244,238,0.85); font-style: normal; }
+
+.hero {
+  background: var(--linen);
+  border-bottom: 1px solid var(--linen3);
+  overflow: hidden;
+  padding: 96px 32px 104px;
+}
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 92vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-split-text {
+  padding: 100px 64px 96px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-split-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink2);
+}
+.hero-split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+}
+.hero-split-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--linen) 0%, transparent 20%),
+              linear-gradient(to top, rgba(30,28,24,0.55) 0%, transparent 40%);
+}
+.hero-split-image-caption {
+  position: absolute;
+  bottom: 28px; left: 28px; right: 28px;
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(247,244,238,0.45);
+}
+@media (max-width: 800px) {
+  .hero-split { grid-template-columns: 1fr; }
+  .hero-split-image { height: 55vw; min-height: 280px; order: -1; }
+  .hero-split-text { padding: 64px 28px 72px; }
+}
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+.hero-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--stone2);
+}
+.hero-subhead {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--stone2);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto 52px;
+}
+.hero-subhead strong { color: var(--ink2); font-weight: 500; }
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 52px;
+  flex-wrap: wrap;
+}
+.hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.hero-meta-label {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.hero-meta-value {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.btn-main {
+  display: block;
+  width: 100%;
+  background: var(--ink);
+  color: var(--linen);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 22px 48px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.2;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 24px rgba(30,28,24,0.22);
+}
+.btn-main:hover {
+  background: var(--ink2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(30,28,24,0.32);
+}
+.btn-main:active { transform: translateY(0); }
+.btn-main.light {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--linen4);
+}
+.btn-main.light:hover { background: var(--linen3); }
+.hero-trust {
+  margin-top: 20px;
+  font-size: 11px;
+  color: var(--stone);
+  letter-spacing: 0.04em;
+  font-weight: 300;
+}
+
+.section { padding: 104px 32px; }
+.section-alt { background: var(--linen2); }
+.section-dark { background: var(--ink); color: var(--linen); }
+.section-darker { background: var(--ink2); color: var(--linen); }
+.section-moss { background: var(--moss); color: var(--linen); }
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.eyebrow-light { color: rgba(247,244,238,0.35); }
+.eyebrow-moss { color: rgba(247,244,238,0.5); }
+
+.headline {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.headline em { font-style: italic; font-weight: 300; color: var(--stone2); }
+.headline-light { color: var(--linen); }
+.headline-light em { color: rgba(247,244,238,0.5); }
+
+.subline {
+  font-family: var(--subhead);
+  font-size: 38px;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--stone2);
+  line-height: 1.25;
+  margin-bottom: 48px;
+  max-width: 100%;
+}
+.subline-light { font-family: var(--subhead); color: rgba(247,244,238,0.5); }
+
+.body-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--stone2);
+  line-height: 1.8;
+  max-width: 580px;
+}
+.body-text-light { color: rgba(247,244,238,0.6); }
+.body-text strong, .body-text-light strong { font-weight: 500; color: var(--ink2); }
+.body-text-light strong { color: var(--linen); }
+.body-text em { font-style: italic; }
+.body-text + .body-text { margin-top: 20px; }
+
+.rule { height: 1px; background: var(--linen3); margin: 56px 0; }
+.rule-dark { height: 1px; background: rgba(247,244,238,0.08); margin: 56px 0; }
+.rule-thin { height: 1px; background: var(--linen3); }
+.rule-thin-dark { height: 1px; background: rgba(247,244,238,0.06); }
+
+.pull-quote {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--ink2);
+  padding: 0 0 0 28px;
+  border-left: 1px solid var(--linen4);
+  margin: 56px 0;
+}
+.pull-quote-light { color: rgba(247,244,238,0.75); border-left-color: rgba(247,244,238,0.15); }
+.pull-quote-gold { color: var(--ink2); border-left: 1px solid var(--gold); }
+
+.pain-list { display: flex; flex-direction: column; }
+.pain-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 20px;
+  padding: 36px 0;
+  border-top: 1px solid var(--linen3);
+  align-items: start;
+}
+.pain-item:last-child { border-bottom: 1px solid var(--linen3); }
+.pain-num {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--stone);
+  padding-top: 4px;
+}
+.pain-title {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.pain-body {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--stone2);
+  line-height: 1.75;
+}
+.pain-body em { font-style: italic; }
+
+.context-box {
+  padding: 28px 32px;
+  background: var(--linen3);
+  border-left: 1px solid var(--gold);
+  margin-bottom: 56px;
+}
+.context-box-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.context-box-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--stone2);
+  line-height: 1.7;
+}
+.context-box-text strong { font-weight: 500; color: var(--ink); }
+
+.d-list { display: flex; flex-direction: column; }
+.d-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 24px;
+  padding: 36px 0;
+  border-top: 1px solid rgba(247,244,238,0.07);
+  align-items: start;
+}
+.d-item:last-child { border-bottom: 1px solid rgba(247,244,238,0.07); }
+.d-letter {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(247,244,238,0.2);
+  line-height: 1;
+}
+.d-name {
+  font-family: var(--sans);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(247,244,238,0.9);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.d-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(247,244,238,0.6);
+  line-height: 1.8;
+}
+
+.nobody-list { display: flex; flex-direction: column; gap: 0; }
+.nobody-item {
+  display: flex;
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(247,244,238,0.06);
+  align-items: flex-start;
+}
+.nobody-item:first-child { border-top: none; padding-top: 0; }
+.nobody-arrow { font-size: 14px; color: var(--gold2); flex-shrink: 0; margin-top: 3px; }
+.nobody-text { font-size: 16px; font-weight: 300; color: rgba(247,244,238,0.65); line-height: 1.75; }
+.nobody-text strong { color: rgba(247,244,238,0.92); font-weight: 500; }
+
+.failure-list { display: flex; flex-direction: column; }
+.failure-item { padding: 32px 0; border-top: 1px solid var(--linen3); }
+.failure-item:last-child { border-bottom: 1px solid var(--linen3); }
+.failure-label {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 8px;
+}
+.failure-title {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.failure-body { font-size: 15px; font-weight: 300; color: var(--stone2); line-height: 1.75; }
+
+.guest-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--linen3);
+  margin-top: 48px;
+}
+.guest-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--linen);
+  overflow: hidden;
+  position: relative;
+}
+.guest-item:last-child { border-bottom: none; }
+.guest-avatar {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--linen3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--stone);
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  position: relative;
+}
+.guest-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(15%);
+  display: block;
+}
+.guest-avatar-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(30,28,24,0.65) 0%, transparent 55%);
+}
+.guest-avatar-label {
+  position: absolute; bottom: 16px; left: 16px; right: 16px;
+  font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(247,244,238,0.4);
+}
+.guest-body { padding: 28px 28px 32px; }
+.guest-name { font-family: var(--serif); font-size: clamp(20px, 2vw, 24px); font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.guest-role {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.guest-desc { font-size: 13px; font-weight: 300; color: var(--stone2); line-height: 1.7; }
+@media (max-width: 640px) {
+  .guest-list { grid-template-columns: 1fr; }
+}
+
+.testi-list { display: flex; flex-direction: column; }
+.testi-item { padding: 40px 0; border-top: 1px solid var(--linen3); }
+.testi-item:last-child { border-bottom: 1px solid var(--linen3); }
+.testi-quote {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink2);
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+.testi-note {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--stone);
+  font-style: italic;
+  border-left: 1px solid var(--linen4);
+  padding-left: 14px;
+  line-height: 1.6;
+}
+.testi-attr { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); margin-top: 12px; }
+
+.offer-list { display: flex; flex-direction: column; }
+.offer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-top: 1px solid rgba(247,244,238,0.07);
+  gap: 16px;
+}
+.offer-item:last-child { border-bottom: 1px solid rgba(247,244,238,0.07); }
+.offer-name {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(247,244,238,0.85);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.55;
+}
+.offer-check { color: var(--gold2); flex-shrink: 0; }
+.offer-price { font-size: 11px; color: rgba(247,244,238,0.2); text-decoration: line-through; white-space: nowrap; flex-shrink: 0; }
+
+.price-display {
+  font-family: var(--serif);
+  font-size: clamp(56px, 10vw, 88px);
+  font-weight: 500;
+  color: var(--linen);
+  line-height: 1;
+}
+.price-display sup { font-size: 24px; font-family: var(--sans); font-weight: 300; vertical-align: super; }
+
+.lotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  gap: 2px;
+  background: var(--linen3);
+  border: 1px solid var(--linen3);
+  margin-top: 36px;
+}
+@media (max-width: 640px) {
+  .lotes-grid { grid-template-columns: 1fr 1fr; }
+}
+.lote {
+  background: var(--linen2);
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+.lote.esgotado { opacity: 0.45; }
+.lote.active {
+  background: var(--ink);
+  padding: 36px 28px 40px;
+  z-index: 1;
+  box-shadow: 0 0 0 2px var(--gold);
+}
+.lote-num {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  font-weight: 500;
+}
+.lote.active .lote-num { color: rgba(247,244,238,0.35); }
+.lote-price {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  margin: 4px 0 2px;
+}
+.lote.active .lote-price {
+  font-size: 52px;
+  color: var(--linen);
+}
+.lote.esgotado .lote-price {
+  text-decoration: line-through;
+  font-weight: 300;
+}
+.lote-status {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--stone);
+  letter-spacing: 0.04em;
+}
+.lote.active .lote-status {
+  color: var(--gold2);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lote-badge {
+  display: none;
+}
+.lote.active .lote-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(176,154,98,0.4);
+  padding: 4px 10px;
+  margin-top: 8px;
+  width: fit-content;
+}
+
+.roi-box {
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: rgba(247,244,238,0.04);
+  border-left: 1px solid var(--gold);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(247,244,238,0.5);
+  line-height: 1.75;
+}
+.roi-box strong { color: var(--gold2); font-weight: 400; }
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(247,244,238,0.06);
+  margin-bottom: 64px;
+}
+@media (max-width: 580px) { .decision-grid { grid-template-columns: 1fr; } }
+.decision-col { padding: 36px 32px; background: var(--ink2); }
+.decision-col-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,244,238,0.25); margin-bottom: 24px; }
+.decision-col.pos .decision-col-label { color: var(--gold2); }
+.decision-items { display: flex; flex-direction: column; gap: 14px; }
+.decision-it { display: flex; gap: 12px; font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(247,244,238,0.3); }
+.decision-col.pos .decision-it { color: rgba(247,244,238,0.7); }
+.di-mark { flex-shrink: 0; color: rgba(247,244,238,0.15); }
+.decision-col.pos .di-mark { color: var(--gold2); }
+
+.who-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+.who-item { display: flex; gap: 14px; font-size: 16px; font-weight: 300; color: var(--stone2); line-height: 1.6; }
+.who-check { color: var(--moss2); flex-shrink: 0; margin-top: 2px; }
+
+.local-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--linen3);
+  border: 1px solid var(--linen3);
+  margin-top: 36px;
+}
+@media (max-width: 540px) { .local-grid { grid-template-columns: 1fr; } }
+.local-card { background: var(--linen); padding: 24px 20px; }
+.local-icon { margin-bottom: 10px; color: var(--stone2); }
+.local-card-title { font-size: 12px; font-weight: 500; color: var(--ink); margin-bottom: 4px; letter-spacing: 0.02em; }
+.local-card-body { font-size: 12px; font-weight: 300; color: var(--stone2); line-height: 1.6; }
+
+.proof-block { text-align: center; padding: 80px 32px; background: var(--ink2); }
+.proof-num { font-family: var(--serif); font-size: clamp(72px, 14vw, 120px); font-weight: 700; color: var(--linen); line-height: 1; margin-bottom: 12px; }
+.proof-num span { color: rgba(247,244,238,0.2); }
+.proof-caption { font-size: 13px; font-weight: 300; color: rgba(247,244,238,0.35); font-style: italic; font-family: var(--serif); }
+
+.footer-cta { padding: 120px 32px; text-align: center; background: var(--moss); }
+.footer-cta-eyebrow { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,244,238,0.3); margin-bottom: 32px; }
+.footer-cta-headline { font-family: var(--serif); font-size: clamp(36px, 6vw, 64px); font-weight: 700; font-style: italic; line-height: 1.05; letter-spacing: -0.02em; color: var(--linen); margin-bottom: 24px; }
+.footer-cta-sub { font-size: 17px; font-weight: 300; color: rgba(247,244,238,0.5); line-height: 1.7; max-width: 460px; margin: 0 auto 32px; }
+.footer-trust { margin-top: 24px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 10px; letter-spacing: 0.06em; color: rgba(247,244,238,0.2); text-transform: uppercase; }
+
+.sticky {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--ink);
+  border-top: 1px solid rgba(247,244,238,0.08);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 100;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.sticky.show { transform: translateY(0); }
+.sticky-price { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--linen); }
+.sticky-lote { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,238,0.3); margin-top: 2px; }
+.btn-sticky {
+  display: inline-block;
+  background: var(--linen);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(247,244,238,0.15);
+  animation: pulse-cta-light 2s ease infinite;
+}
+.btn-sticky:hover { background: var(--linen2); transform: translateY(-1px); }
+
+.countdown {
+  background: var(--linen2);
+  border-top: 1px solid var(--linen3);
+  border-bottom: 1px solid var(--linen3);
+  padding: 40px 32px;
+  text-align: center;
+}
+.countdown-label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); margin-bottom: 20px; }
+.countdown-digits { display: flex; align-items: flex-end; justify-content: center; gap: 6px; }
+.cd-unit { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.cd-num { font-family: var(--serif); font-size: clamp(36px, 7vw, 60px); font-weight: 300; color: var(--ink); line-height: 1; min-width: 64px; text-align: center; }
+.cd-lbl { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); }
+.cd-dot { font-family: var(--serif); font-size: 36px; color: var(--linen4); line-height: 1; padding-bottom: 10px; }
+
+footer {
+  background: var(--ink);
+  padding: 24px 32px;
+  text-align: center;
+  border-top: 1px solid rgba(247,244,238,0.06);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247,244,238,0.15);
+}
+
+.dark-block { background: var(--ink); padding: 48px; margin: 48px 0; }
+.dark-block-serif { font-family: var(--serif); font-size: clamp(20px, 3vw, 30px); font-weight: 300; font-style: italic; color: var(--linen); line-height: 1.3; margin-bottom: 8px; }
+.dark-block-sub { font-size: 14px; font-weight: 300; color: rgba(247,244,238,0.4); line-height: 1.6; }
+
+/* ── NOVOS ESTILOS PARA BLOCOS ADICIONADOS ── */
+
+/* Vídeo placeholder */
+.video-placeholder {
+  background: var(--ink2);
+  border: 1px solid rgba(247,244,238,0.08);
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.video-placeholder:hover { background: var(--ink); }
+.video-play-btn {
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(247,244,238,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-placeholder-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247,244,238,0.2);
+}
+
+/* Fotos grid */
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+}
+@media (max-width: 540px) { .photos-grid { grid-template-columns: 1fr; } }
+.photo-item { position: relative; overflow: hidden; }
+.photo-placeholder {
+  background: var(--linen3);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+.photo-placeholder-dark {
+  background: var(--ink2);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+.photo-caption {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--stone2);
+  line-height: 1.5;
+  background: var(--linen);
+  padding: 12px 16px;
+}
+.photo-caption-dark {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(247,244,238,0.5);
+  line-height: 1.5;
+  padding: 12px 0 0;
+}
+.photo-caption strong { color: var(--ink2); font-weight: 500; }
+.photo-caption-dark strong { color: var(--linen); font-weight: 500; }
+
+.photos-grid-alt {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  margin-top: 40px;
+}
+@media (max-width: 640px) { .photos-grid-alt { grid-template-columns: 1fr 1fr; } }
+
+/* Programação */
+.program-list { display: flex; flex-direction: column; }
+.program-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-top: 1px solid var(--linen3);
+  align-items: start;
+}
+.program-item:last-child { border-bottom: 1px solid var(--linen3); }
+.program-arrow { color: var(--gold); font-size: 14px; margin-top: 4px; }
+.program-title {
+  font-family: var(--serif);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.program-desc { font-size: 14px; font-weight: 300; color: var(--stone2); line-height: 1.7; }
+.program-tag {
+  display: inline-block;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--linen4);
+  padding: 3px 8px;
+  margin-bottom: 8px;
+}
+
+/* Bônus */
+.bonus-list { display: flex; flex-direction: column; gap: 0; }
+.bonus-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(247,244,238,0.07);
+  align-items: start;
+}
+.bonus-item:last-child { border-bottom: 1px solid rgba(247,244,238,0.07); }
+.bonus-num {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(247,244,238,0.15);
+  line-height: 1;
+}
+.bonus-name {
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 600;
+  color: rgba(247,244,238,0.9);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.bonus-desc { font-size: 14px; font-weight: 300; color: rgba(247,244,238,0.55); line-height: 1.75; }
+.bonus-value {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  border: 1px solid rgba(176,154,98,0.3);
+  padding: 4px 10px;
+}
+
+/* Pertencimento */
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(247,244,238,0.06);
+  margin: 48px 0;
+}
+@media (max-width: 540px) { .identity-grid { grid-template-columns: 1fr; } }
+.identity-cell { background: var(--ink2); padding: 32px; }
+.identity-cell-icon { font-size: 20px; margin-bottom: 14px; color: var(--gold2); }
+.identity-cell-title { font-size: 15px; font-weight: 600; color: rgba(247,244,238,0.85); margin-bottom: 8px; line-height: 1.3; }
+.identity-cell-body { font-size: 13px; font-weight: 300; color: rgba(247,244,238,0.45); line-height: 1.7; }
+
+/* Benefícios */
+.benefit-list { display: flex; flex-direction: column; gap: 0; }
+.benefit-item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 16px;
+  padding: 22px 0;
+  border-top: 1px solid var(--linen3);
+  align-items: start;
+}
+.benefit-item:last-child { border-bottom: 1px solid var(--linen3); }
+.benefit-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 7px;
+}
+.benefit-text { font-size: 15px; font-weight: 300; color: var(--stone2); line-height: 1.7; }
+.benefit-text strong { color: var(--ink2); font-weight: 600; }
+
+/* Depoimentos em vídeo */
+.video-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+}
+@media (max-width: 540px) { .video-testi-grid { grid-template-columns: 1fr; } }
+.video-testi-item { background: var(--ink2); }
+.video-testi-placeholder {
+  aspect-ratio: 16/9;
+  background: rgba(247,244,238,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(247,244,238,0.06);
+}
+.video-testi-info { padding: 18px 20px; }
+.video-testi-name { font-size: 13px; font-weight: 600; color: rgba(247,244,238,0.8); margin-bottom: 4px; }
+.video-testi-result { font-size: 12px; font-weight: 300; color: rgba(247,244,238,0.35); line-height: 1.5; font-style: italic; }
+
+/* Empilhamento total */
+.stack-total {
+  background: var(--ink);
+  padding: 48px;
+  margin: 48px 0 0;
+  border: 1px solid rgba(247,244,238,0.06);
+}
+.stack-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(247,244,238,0.05);
+  gap: 16px;
+}
+.stack-row:last-of-type { border-bottom: none; }
+.stack-item-name { font-size: 13px; font-weight: 300; color: rgba(247,244,238,0.5); display: flex; gap: 10px; align-items: center; line-height: 1.5; }
+.stack-check { color: var(--gold2); flex-shrink: 0; font-size: 11px; }
+.stack-item-val { font-size: 12px; color: rgba(247,244,238,0.2); text-decoration: line-through; white-space: nowrap; flex-shrink: 0; }
+.stack-total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 20px 0 0;
+  border-top: 1px solid rgba(247,244,238,0.1);
+  margin-top: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.stack-total-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,238,0.25); }
+.stack-total-val { font-family: var(--serif); font-size: 28px; font-weight: 300; color: rgba(247,244,238,0.2); text-decoration: line-through; }
+.stack-cta-line {
+  margin-top: 28px;
+  padding: 24px 0 0;
+  border-top: 1px solid rgba(247,244,238,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.stack-cta-price { font-family: var(--serif); font-size: clamp(40px, 6vw, 60px); font-weight: 400; color: var(--linen); line-height: 1; }
+.stack-cta-price sup { font-size: 18px; font-family: var(--sans); font-weight: 300; vertical-align: super; }
+
+@media (max-width: 640px) {
+  .dark-block { padding: 36px 28px; }
+  .section { padding: 80px 24px; }
+  .hero { padding: 72px 24px; }
+  .container, .container-wide { padding: 0 24px; }
+  .stack-total { padding: 32px 24px; }
+}
+
+/* ── CRO: PULSE NOS BOTÕES PRINCIPAIS ── */
+@keyframes pulse-cta {
+  0%   { box-shadow: 0 4px 24px rgba(30,28,24,0.22), 0 0 0 0 rgba(30,28,24,0.5); }
+  50%  { box-shadow: 0 4px 24px rgba(30,28,24,0.22), 0 0 0 14px rgba(30,28,24,0); }
+  100% { box-shadow: 0 4px 24px rgba(30,28,24,0.22), 0 0 0 0 rgba(30,28,24,0); }
+}
+@keyframes pulse-cta-light {
+  0%   { box-shadow: 0 4px 24px rgba(30,28,24,0.12), 0 0 0 0 rgba(247,244,238,0.45); }
+  50%  { box-shadow: 0 4px 24px rgba(30,28,24,0.12), 0 0 0 14px rgba(247,244,238,0); }
+  100% { box-shadow: 0 4px 24px rgba(30,28,24,0.12), 0 0 0 0 rgba(247,244,238,0); }
+}
+.btn-pulse { animation: pulse-cta 1.8s ease infinite; }
+.btn-pulse-light { animation: pulse-cta-light 1.8s ease infinite; }
+
+/* ── CRO: TARJA + MICROCOPY ── */
+.btn-wrapper { display: flex; flex-direction: column; gap: 0; align-items: stretch; }
+.btn-tarja {
+  background: var(--moss2);
+  color: var(--linen);
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-align: center; padding: 7px 12px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.btn-tarja-dark {
+  background: rgba(107,117,96,0.5);
+  color: rgba(247,244,238,0.7);
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-align: center; padding: 7px 12px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.btn-microcopy {
+  font-size: 10px; font-weight: 300; color: var(--stone);
+  text-align: center; padding: 8px 0 0;
+  letter-spacing: 0.04em; font-style: italic;
+}
+.btn-microcopy-dark {
+  font-size: 10px; font-weight: 300; color: rgba(247,244,238,0.25);
+  text-align: center; padding: 8px 0 0;
+  letter-spacing: 0.04em; font-style: italic;
+}
+
+/* ── CRO: VAGAS RESTANTES ── */
+.vagas-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(176,154,98,0.12);
+  border: 1px solid rgba(176,154,98,0.3);
+  padding: 8px 14px; font-size: 11px; font-weight: 400;
+  color: var(--gold2); letter-spacing: 0.06em; margin-bottom: 16px;
+}
+.vagas-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold2);
+  animation: blink 1.4s ease infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* ── CRO: TOAST SOCIAL PROOF ── */
+#social-toast {
+  position: fixed; bottom: 80px; left: 24px;
+  background: var(--ink); border: 1px solid rgba(247,244,238,0.1);
+  border-left: 3px solid var(--gold);
+  padding: 14px 18px; display: flex; align-items: center; gap: 12px;
+  z-index: 200; max-width: 300px;
+  transform: translateX(-120%);
+  transition: transform 0.4s cubic-bezier(0.34,1.2,0.64,1);
+  pointer-events: none;
+}
+#social-toast.show { transform: translateX(0); }
+.toast-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--ink2); border: 1px solid rgba(247,244,238,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: rgba(247,244,238,0.4); flex-shrink: 0;
+}
+.toast-text { font-size: 11px; font-weight: 300; color: rgba(247,244,238,0.6); line-height: 1.5; }
+.toast-text strong { color: rgba(247,244,238,0.85); font-weight: 500; }
+.toast-time { font-size: 9px; color: rgba(247,244,238,0.2); margin-top: 2px; letter-spacing: 0.04em; }
+
+/* ── CRO: EXIT POPUP ── */
+#exit-popup {
+  position: fixed; inset: 0;
+  background: rgba(30,28,24,0.85);
+  z-index: 500; display: flex; align-items: center;
+  justify-content: center; padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+#exit-popup.show { opacity: 1; pointer-events: all; }
+.exit-popup-box {
+  background: var(--linen); max-width: 520px; width: 100%;
+  padding: 52px 48px; position: relative; text-align: center;
+}
+.exit-popup-close {
+  position: absolute; top: 16px; right: 20px;
+  font-size: 20px; color: var(--stone);
+  cursor: pointer; background: none; border: none; line-height: 1;
+}
+.exit-popup-eyebrow { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); margin-bottom: 20px; }
+.exit-popup-headline {
+  font-family: var(--serif); font-size: clamp(24px,4vw,36px);
+  font-weight: 700; color: var(--ink); line-height: 1.1;
+  margin-bottom: 16px; letter-spacing: -0.02em;
+}
+.exit-popup-headline em { font-style: italic; font-weight: 300; color: var(--stone2); }
+.exit-popup-body { font-size: 14px; font-weight: 300; color: var(--stone2); line-height: 1.7; margin-bottom: 28px; }
+.exit-popup-bonus {
+  background: var(--linen2); border-left: 2px solid var(--gold);
+  padding: 16px 20px; margin-bottom: 28px; text-align: left;
+}
+.exit-popup-bonus-label { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.exit-popup-bonus-text { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+.exit-popup-trust { margin-top: 14px; font-size: 10px; color: var(--stone); letter-spacing: 0.04em; }
+.exit-popup-dismiss { margin-top: 16px; font-size: 11px; color: var(--stone); cursor: pointer; text-decoration: underline; background: none; border: none; }
+
+/* ── CRO: BARRA DE PROGRESSO DE VAGAS ── */
+.progress-bar-wrap {
+  background: rgba(247,244,238,0.06); height: 4px;
+  margin: 16px 0 6px; position: relative; overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%; background: var(--gold); width: 68%; position: relative;
+}
+.progress-bar-fill::after {
+  content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 20px;
+  background: linear-gradient(to right, transparent, rgba(176,154,98,0.6));
+}
+.progress-label {
+  font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(247,244,238,0.3); display: flex; justify-content: space-between;
+}
+.progress-label span { color: var(--gold2); }
+
+@media (max-width: 480px) {
+  .exit-popup-box { padding: 40px 28px; }
+  #social-toast { max-width: calc(100vw - 48px); bottom: 88px; }
+}
+
+/* ── INGRESSO 3D ── */
+.ticket-scene {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  margin: 48px auto 56px;
+  max-width: 500px;
+}
+.ticket-3d {
+  display: flex;
+  width: 100%;
+  transform: rotateX(5deg) rotateY(-13deg) rotateZ(1.5deg);
+  box-shadow:
+    18px 28px 60px rgba(0,0,0,0.65),
+    0 0 0 1px rgba(255,255,255,0.04);
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s ease;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.ticket-3d:hover {
+  transform: rotateX(1deg) rotateY(-5deg) rotateZ(0deg) translateY(-8px);
+  box-shadow:
+    24px 40px 80px rgba(0,0,0,0.75),
+    0 0 0 1px rgba(105,181,74,0.25);
+}
+.ticket-body {
+  flex: 1;
+  background: #0f0f0e;
+  padding: 28px 28px 28px 32px;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #69B54A;
+}
+.ticket-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 12px,
+    rgba(105,181,74,0.025) 12px,
+    rgba(105,181,74,0.025) 13px
+  );
+  pointer-events: none;
+}
+.ticket-body::after {
+  content: '6D';
+  position: absolute;
+  right: -10px; bottom: -28px;
+  font-family: var(--sans);
+  font-size: 130px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+}
+.ticket-event-label {
+  font-size: 7px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #69B54A;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.ticket-event-name {
+  font-family: var(--sans);
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 0.95;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.ticket-event-sub {
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.ticket-details {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 12px;
+}
+.ticket-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.ticket-detail-label {
+  font-size: 6px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+.ticket-detail-val {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ticket-perforated {
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.15) 0px,
+    rgba(255,255,255,0.15) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  position: relative;
+  flex-shrink: 0;
+}
+.ticket-perforated::before,
+.ticket-perforated::after {
+  content: '';
+  position: absolute;
+  width: 16px; height: 16px;
+  background: var(--linen);
+  border-radius: 50%;
+  left: -7.5px;
+  z-index: 2;
+}
+.ticket-perforated::before { top: -8px; }
+.ticket-perforated::after  { bottom: -8px; }
+.ticket-stub {
+  width: 88px;
+  background: #69B54A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  gap: 2px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ticket-stub::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 10px,
+    rgba(0,0,0,0.06) 10px,
+    rgba(0,0,0,0.06) 11px
+  );
+}
+.ticket-stub-lote {
+  font-size: 6px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.45);
+  position: relative;
+  font-weight: 700;
+}
+.ticket-stub-dates {
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 900;
+  color: #0f0f0e;
+  line-height: 0.95;
+  position: relative;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+.ticket-stub-dates span {
+  display: block;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: rgba(0,0,0,0.5);
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+.ticket-stub-seats {
+  font-size: 6px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.35);
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+  font-weight: 700;
+}
+
+/* Variantes para diferentes fundos de seção */
+.ticket-3d.dark-ticket .ticket-perforated::before,
+.ticket-3d.dark-ticket .ticket-perforated::after { background: var(--ink); }
+.ticket-3d.moss-ticket .ticket-perforated::before,
+.ticket-3d.moss-ticket .ticket-perforated::after { background: var(--moss); }
+
+@media (max-width: 540px) {
+  .ticket-3d {
+    transform: rotateX(3deg) rotateY(-7deg) rotateZ(1deg);
+  }
+  .ticket-stub { width: 72px; }
+  .ticket-stub-dates { font-size: 20px; }
+}
+
+/* ── UX IMPROVEMENTS ── */
+
+/* Photo grid sem img — editorial */
+.photo-placeholder { position: relative; }
+
+/* Guest avatar sem img — hover state */
+.guest-avatar:hover > div > span { 
+  color: rgba(247,244,238,0.12) !important; 
+  transition: color 0.4s ease; 
+}
+
+/* Melhorar contraste do countdown */
+.countdown { border-top: none; }
+.cd-num { font-weight: 500 !important; }
+
+/* Announce bar — mais presença */
+.announce {
+  padding: 14px 24px;
+  background: linear-gradient(to right, var(--ink) 0%, #252319 50%, var(--ink) 100%);
+}
+
+/* Hero headline — mais impacto */
+.hero-headline {
+  letter-spacing: -0.03em;
+}
+
+/* Seções — breathing space */
+.section { padding: 112px 32px; }
+
+/* Pull quote — mais destaque */
+.pull-quote {
+  letter-spacing: -0.01em;
+}
+
+/* Botão principal — micro-refinamento */
+.btn-main {
+  letter-spacing: 0.08em;
+}
+
+/* Guest list — separador mais sutil */
+.guest-item + .guest-item {
+  border-top: 1px solid var(--linen3);
+}
+
+/* Faixas tipográficas — fade-in */
+@media (prefers-reduced-motion: no-preference) {
+  .foto-break-fade { opacity: 0; animation: fadeUp 0.9s ease 0.2s forwards; }
+}
+
+/* ── COMPARATIVO 3D ── */
+.comparativo-section { padding: 96px 32px; }
+.comparativo-pergunta {
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(247,244,238,0.3);
+  margin-bottom: 52px;
+  text-align: center;
+}
+.comp-arena {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
+}
+.comp-card {
+  flex: 1;
+  max-width: 320px;
+  min-height: 260px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 44px 36px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.55s cubic-bezier(0.22,1,0.36,1), box-shadow 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+.comp-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, transparent, transparent 60px, rgba(255,255,255,0.012) 60px, rgba(255,255,255,0.012) 61px);
+  pointer-events: none;
+}
+.comp-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.10) 30%, rgba(255,255,255,0.16) 50%, rgba(255,255,255,0.10) 70%, transparent 100%);
+}
+.comp-card-left {
+  background: var(--ink2);
+  border: 1px solid rgba(247,244,238,0.06);
+  transform: rotateY(14deg) rotateX(2deg) rotateZ(-0.5deg) translateX(8px);
+  box-shadow: -20px 32px 80px rgba(0,0,0,0.7), -4px 8px 24px rgba(0,0,0,0.4);
+  z-index: 1;
+}
+.comp-card-right {
+  background: var(--moss);
+  border: 1px solid rgba(247,244,238,0.10);
+  transform: rotateY(-14deg) rotateX(2deg) rotateZ(0.5deg) translateX(-8px);
+  box-shadow: 20px 32px 80px rgba(0,0,0,0.65), 4px 8px 24px rgba(0,0,0,0.35);
+  z-index: 1;
+}
+.comp-card-left:hover {
+  transform: rotateY(8deg) rotateX(1deg) rotateZ(-0.3deg) translateX(4px) translateY(-4px);
+  box-shadow: -24px 40px 96px rgba(0,0,0,0.75), -6px 12px 32px rgba(0,0,0,0.45);
+}
+.comp-card-right:hover {
+  transform: rotateY(-8deg) rotateX(1deg) rotateZ(0.3deg) translateX(-4px) translateY(-4px);
+  box-shadow: 24px 40px 96px rgba(0,0,0,0.7), 6px 12px 32px rgba(0,0,0,0.4);
+}
+.comp-card-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(247,244,238,0.28);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.comp-card-number {
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.comp-card-left .comp-card-number { color: rgba(247,244,238,0.60); }
+.comp-card-right .comp-card-number { color: var(--linen); }
+.comp-card-number sup { font-size: 0.38em; font-weight: 400; vertical-align: super; letter-spacing: 0; opacity: 0.6; }
+.comp-card-complement { font-size: clamp(14px, 1.8vw, 18px); font-weight: 300; color: rgba(247,244,238,0.42); line-height: 1.4; }
+.comp-card-right .comp-card-complement { color: rgba(247,244,238,0.6); }
+.comp-card-talvez { font-size: 12px; font-weight: 300; font-style: italic; color: rgba(247,244,238,0.18); margin-top: 8px; }
+.comp-tag-always {
+  display: inline-block;
+  background: rgba(247,244,238,0.08);
+  border: 1px solid rgba(247,244,238,0.12);
+  color: rgba(247,244,238,0.85);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-top: 14px;
+}
+.comp-vs-wrap {
+  width: 64px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+.comp-vs-line {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, transparent, rgba(140,122,74,0.3));
+}
+.comp-vs-line.bottom { background: linear-gradient(to top, transparent, rgba(140,122,74,0.3)); }
+.comp-vs-text { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: var(--gold2); text-transform: uppercase; opacity: 0.65; }
+.comp-rodape {
+  margin-top: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.comp-rodape-divider { width: 36px; height: 1px; background: rgba(140,122,74,0.35); }
+.comp-rodape-pre { font-size: clamp(13px, 1.5vw, 15px); font-weight: 300; color: rgba(247,244,238,0.35); line-height: 1.6; }
+.comp-rodape-headline { font-size: clamp(24px, 3.5vw, 42px); font-weight: 700; line-height: 1.18; letter-spacing: -0.02em; color: var(--linen); }
+.comp-rodape-headline em { font-style: italic; font-weight: 300; color: var(--gold2); }
+.comp-rodape-extra { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 8px; }
+.comp-rodape-extra-line1,
+.comp-rodape-extra-line2 { font-size: clamp(14px, 1.8vw, 18px); font-weight: 600; color: rgba(247,244,238,0.78); line-height: 1.4; }
+.comp-rodape-extra-line3 { font-size: 13px; font-weight: 300; font-style: italic; color: var(--gold2); letter-spacing: 0.04em; margin-top: 2px; }
+
+@media (max-width: 640px) {
+  .comp-arena { flex-direction: column; }
+  .comp-card { max-width: 100%; width: 100%; min-height: auto; padding: 32px 28px 28px; }
+  .comp-card-left  { transform: rotateX(-4deg) rotateZ(-0.5deg) translateY(8px); box-shadow: 0 24px 60px rgba(0,0,0,0.6); }
+  .comp-card-right { transform: rotateX(4deg) rotateZ(0.5deg) translateY(-8px); box-shadow: 0 -16px 60px rgba(0,0,0,0.5); }
+  .comp-card-left:hover, .comp-card-right:hover { transform: none; }
+  .comp-vs-wrap { flex-direction: row; gap: 16px; padding: 0 16px; }
+  .comp-vs-line { width: 56px; height: 1px; background: linear-gradient(to right, transparent, rgba(140,122,74,0.3)); }
+  .comp-vs-line.bottom { background: linear-gradient(to left, transparent, rgba(140,122,74,0.3)); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ANNOUNCE -->
+<div class="announce">
+  <em>Lote 2 · R$ 697</em> &ensp;·&ensp; Máximo 100 pessoas &ensp;·&ensp; 11 e 12 de Abril &ensp;·&ensp; São Paulo
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 1 — PROMESSA PRINCIPAL
+     Função: Capturar atenção. Identificação
+     imediata. Promessa transformadora.
+═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow fade">Evento presencial &ensp;·&ensp; São Paulo</div>
+    <h1 class="hero-headline fade">
+      O mercado te vendeu<br>
+      noventa e oito aulas.<br>
+      <em>Você precisava<br>de dois dias.</em>
+    </h1>
+    <p class="hero-subhead fade" style="margin-bottom:20px;">O único evento do Brasil onde você sai com <strong>um sistema que faz o faturamento do lançamento com 1 único conteúdo</strong></p>
+    <p class="subline fade" style="font-size:28px;margin-bottom:40px;">vendendo todos os dias para desconhecidos, enquanto você está onde as pessoas que você ama estão.</p>
+    <div class="hero-meta fade">
+      <div class="hero-meta-item"><span class="hero-meta-label">Data</span><span class="hero-meta-value">11 e 12 de Abril</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Local</span><span class="hero-meta-value">Wyndham Ibirapuera</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Vagas</span><span class="hero-meta-value">Máximo 100</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Lote atual</span><span class="hero-meta-value">R$ 697</span></div>
+    </div>
+    <div class="btn-wrapper fade" style="max-width:340px;margin:0 auto;">
+      <div class="btn-tarja">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra 100% segura · Confirmação imediata
+      </div>
+      <a href="#garantir" class="btn-main btn-pulse">Quero garantir minha vaga — R$ 697</a>
+      <div class="btn-microcopy">Leva só 2 minutos. Você ainda pode pensar depois.</div>
+    </div>
+    <!-- Ingresso 3D — Hero -->
+    <div class="ticket-scene">
+      <div class="ticket-3d">
+        <div class="ticket-body">
+          <div class="ticket-event-label">Ingresso Oficial</div>
+          <div class="ticket-event-name">Mecanismo 6D</div>
+          <div class="ticket-event-sub">Imersão Presencial · São Paulo</div>
+          <div class="ticket-details">
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Data</span>
+              <span class="ticket-detail-val">11 e 12 ABR</span>
+            </div>
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Local</span>
+              <span class="ticket-detail-val">Wyndham SP</span>
+            </div>
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Vagas</span>
+              <span class="ticket-detail-val">Máx. 100</span>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-perforated"></div>
+        <div class="ticket-stub">
+          <div class="ticket-stub-lote">Lote 2</div>
+          <div class="ticket-stub-dates">11–12<span>ABR 2025</span></div>
+          <div class="ticket-stub-seats">São Paulo<br>SP</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-trust fade">Lote 2 ativo &ensp;·&ensp; Próximo lote: R$ 797 &ensp;·&ensp; <span id="vagas-hero">68 vagas preenchidas de 100</span></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 2 — COMPARATIVO 3D
+     Função: Ancoragem emocional de valor.
+     Presença vs Dinheiro.
+═══════════════════════════════════════ -->
+<section class="section section-dark comparativo-section">
+  <div class="container" style="max-width:900px;">
+    <p class="comparativo-pergunta">O que você prefere?</p>
+
+    <div class="comp-arena">
+      <!-- Card Esquerdo -->
+      <div class="comp-card comp-card-left">
+        <div class="comp-card-label">Opção A</div>
+        <div class="comp-card-number"><sup>R$</sup>&nbsp;1 milhão</div>
+        <div class="comp-card-complement">a cada 3 meses.</div>
+        <div class="comp-card-talvez">( Talvez )</div>
+      </div>
+
+      <!-- VS -->
+      <div class="comp-vs-wrap">
+        <div class="comp-vs-line"></div>
+        <span class="comp-vs-text">vs</span>
+        <div class="comp-vs-line bottom"></div>
+      </div>
+
+      <!-- Card Direito -->
+      <div class="comp-card comp-card-right">
+        <div class="comp-card-label">Opção B</div>
+        <div class="comp-card-number"><sup>R$</sup>&nbsp;250.000</div>
+        <div class="comp-card-complement">por mês</div>
+        <span class="comp-tag-always">sempre</span>
+      </div>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="comp-rodape">
+      <div class="comp-rodape-divider"></div>
+      <p class="comp-rodape-pre">Essa resposta não é sobre dinheiro...</p>
+      <h2 class="comp-rodape-headline">É sobre o Quanto de você<br><em>Sua Família</em> Vai ter.</h2>
+      <div class="comp-rodape-extra">
+        <p class="comp-rodape-extra-line1">Presença é O Salário Que Eles Merecem</p>
+        <p class="comp-rodape-extra-line2">Alívio e Dinheiro Previsível Deveria ser o Seu</p>
+        <p class="comp-rodape-extra-line3">Em 2 dias presenciais, você sai com tudo pronto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 3 — VÍDEO DE TEASER EMOCIONAL
+     Função: Conexão emocional antes da
+     lógica. Prepara estado receptivo.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">Assista antes de continuar</div>
+    <p class="fade" style="font-family:var(--serif);font-size:clamp(20px,3vw,32px);font-weight:300;font-style:italic;color:rgba(247,244,238,0.75);line-height:1.35;margin-bottom:8px;">Existe uma versão do seu negócio onde você não precisa sumir para faturar.</p>
+    <p class="fade" style="font-size:15px;font-weight:300;color:rgba(247,244,238,0.35);line-height:1.7;margin-bottom:36px;">Este vídeo mostra por que esse caminho existe — e por que ninguém te contou antes.</p>
+
+    <div class="video-placeholder fade" role="button" aria-label="Assistir vídeo de apresentação">
+      <div class="video-play-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(247,244,238,0.5)" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <div class="video-placeholder-label">[ Inserir vídeo de apresentação — 3 a 5 minutos ]</div>
+    </div>
+
+    <p class="fade" style="margin-top:32px;font-size:15px;font-weight:300;color:rgba(247,244,238,0.4);line-height:1.75;max-width:540px;margin-left:auto;margin-right:auto;text-align:center;">Se o que você viu faz sentido — continue lendo. O que está abaixo explica como, exatamente, você vai construir isso em dois dias.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 3 — CONTADOR + DATA + LOCAL
+     Função: Urgência real. Tornar o evento
+     concreto e próximo na mente do leitor.
+═══════════════════════════════════════ -->
+<div class="countdown">
+  <div class="countdown-label">O evento começa em</div>
+  <div class="countdown-digits">
+    <div class="cd-unit"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Dias</div></div>
+    <div class="cd-dot">·</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Horas</div></div>
+    <div class="cd-dot">·</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Minutos</div></div>
+    <div class="cd-dot">·</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Segundos</div></div>
+  </div>
+  <div style="margin-top:20px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);text-align:center;">11 e 12 de Abril &ensp;·&ensp; Wyndham Ibirapuera, São Paulo &ensp;·&ensp; Máximo 100 pessoas</div>
+  <div style="margin-top:16px;text-align:center;">
+    <a href="#garantir" class="btn-main btn-pulse">Reservar vaga no Lote 2 — R$ 697</a>
+    <div style="margin-top:10px;font-size:10px;color:var(--stone);letter-spacing:0.06em;">Vagas limitadas · Próximo lote: R$ 797 · Compra 100% segura</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 4 — IDENTIFICAÇÃO COM O PROBLEMA
+     Função: Reconhecimento profundo.
+     O visitante sente que foi escrito pra ele.
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="fade" style="font-family:var(--serif);font-size:clamp(22px,3.5vw,38px);font-weight:400;font-style:italic;line-height:1.3;color:var(--ink2);padding:0 0 0 28px;border-left:1px solid var(--gold);margin-bottom:20px;">
+      "Você já disse 'agora não dá, estou em lançamento' para alguém que importa."
+    </div>
+    <p class="fade" style="font-size:17px;font-weight:400;color:var(--ink2);line-height:1.65;margin-bottom:12px;">O problema não é que você disse uma vez.</p>
+    <p class="fade" style="font-size:17px;font-weight:300;color:var(--stone2);line-height:1.65;margin-bottom:64px;">É que você sabe exatamente quando vai dizer de novo.</p>
+
+    <p class="body-text fade">Existe um custo que não aparece em nenhum dashboard.</p>
+    <p class="body-text fade" style="margin-top:16px;">Não tem coluna no planilhão de métricas. Não tem linha no relatório de custo por lead. Não tem gráfico que mostre o quanto ele cresce a cada trimestre.</p>
+    <p class="body-text fade" style="margin-top:16px;">É o custo que a pessoa do outro lado da mesa paga em silêncio — enquanto você está de olho no carrinho aberto, nos números que vão ou não vão acontecer nos próximos sete dias.</p>
+    <p class="body-text fade" style="margin-top:16px;font-weight:500;color:var(--ink);">Esse custo tem nome. E você sabe qual é.</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 5 — DETALHANDO AS DORES
+     Função: Amplificar a dor. Quanto mais
+     o leitor se reconhece, mais quer sair.
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="eyebrow fade">O modelo que a indústria vendeu como liberdade</div>
+    <h2 class="headline fade">Um mês bom.<br><em>Três no vermelho.<br>"Será que eu não nasci pra isso?"</em></h2>
+    <p class="subline fade">Você reconhece esse ciclo. O problema não é que ele aconteceu uma vez. É que você sabe exatamente quando vai acontecer de novo.</p>
+
+    <div class="pain-list">
+      <div class="pain-item fade">
+        <div class="pain-num">01</div>
+        <div>
+          <div class="pain-title">A montanha-russa financeira que você parou de contar para as pessoas.</div>
+          <div class="pain-body">Um mês muito bom. Você se animou, fez planos. Veio o mês seguinte — e o dinheiro simplesmente não apareceu no mesmo volume. Você já sabe que esse ciclo vai se repetir.<br><br>E a cada repetição, a mesma pergunta silenciosa que você nunca diz em voz alta: <em>e se o problema for eu?</em></div>
+        </div>
+      </div>
+      <div class="pain-item fade">
+        <div class="pain-num">02</div>
+        <div>
+          <div class="pain-title">O modelo "tudo ou nada" que aposta noventa dias em sete dias perfeitos.</div>
+          <div class="pain-body">Um trimestre inteiro de trabalho concentrado em uma janela de sete dias. CPL que não engaja. E-mail que não abre. Concorrente que lança na mesma semana. Bug no checkout no dia da abertura. O carrinho abre morto — e não tem como recuperar.<br><br>Não existe proteção contra imprevistos. Se algo sai errado nessa janela, você não recupera o trimestre.</div>
+        </div>
+      </div>
+      <div class="pain-item fade">
+        <div class="pain-num">03</div>
+        <div>
+          <div class="pain-title">A exposição pública do fracasso que a maioria não fala.</div>
+          <div class="pain-body">Um lançamento que fracassa é visível. A audiência percebe. Os pares percebem. A vergonha não é só financeira — é coletiva. E depois de R$ 5.000 a R$ 50.000 investidos sem retorno, você fica sem saber se o problema foi a copy, o público, o produto, o timing — ou você mesmo.<br><br>Essa dúvida ainda está lá.</div>
+        </div>
+      </div>
+      <div class="pain-item fade">
+        <div class="pain-num">04</div>
+        <div>
+          <div class="pain-title">O burnout que você chama de dedicação.</div>
+          <div class="pain-body">14, 16 horas por dia na semana de lançamento. Ansiedade constante. Insônia antes de abrir o carrinho. Dashboard atualizado de cinco em cinco minutos. Dependência total do algoritmo — e da janela de atenção que ele decide te dar.<br><br>O corpo paga. As pessoas que importam pagam. E você ainda vai repetir isso no próximo trimestre.</div>
+        </div>
+      </div>
+      <div class="pain-item fade">
+        <div class="pain-num">05</div>
+        <div>
+          <div class="pain-title">O custo que não aparece em nenhum relatório.</div>
+          <div class="pain-body">Você já disse "agora não dá, estou em lançamento" para alguém que importa. E sabe exatamente quando vai dizer de novo.<br><br>Não é só o cansaço físico. É o ressentimento acumulado. É a pergunta que você não faz em voz alta: <em>o que estou perdendo enquanto isso?</em><br><br>Um sistema que vende enquanto você está em outro lugar — não no dashboard, não no lançamento, mas onde as pessoas que você ama estão — não é luxo. É o mínimo que o seu esforço devia ter comprado desde o começo.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin:48px 0;padding:20px 28px;background:var(--linen3);border-left:2px solid var(--gold);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;" class="fade">
+      <div style="font-size:14px;font-weight:300;color:var(--stone2);line-height:1.6;">Em dois dias em São Paulo você monta o sistema que substitui esse ciclo — de uma vez.</div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <div><div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:2px;">Data</div><div style="font-size:14px;font-weight:600;color:var(--ink);">11 e 12 de Abril</div></div>
+        <div><div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:2px;">Local</div><div style="font-size:14px;font-weight:600;color:var(--ink);">Wyndham Ibirapuera · SP</div></div>
+        <div><div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:2px;">Vagas</div><div style="font-size:14px;font-weight:600;color:var(--ink);">Máximo 100</div></div>
+      </div>
+    </div>
+
+    <div class="pull-quote pull-quote-gold fade" style="margin-top:0;">"Você não tem um negócio. Você tem um emprego onde o patrão é o seu próximo lançamento."</div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 6 — PROVA DE QUE A MUDANÇA É POSSÍVEL
+     Função: Quebrar crença de que a situação
+     é permanente. Ativar esperança real.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">Não é exceção. É padrão.</div>
+    <h2 class="headline headline-light fade">Outras pessoas saíram desse ciclo.<br><em>Com a mesma estrutura<br>que você vai montar.</em></h2>
+    <p class="fade" style="font-size:16px;font-weight:300;color:rgba(247,244,238,0.5);line-height:1.75;margin-bottom:56px;max-width:520px;">Não são pessoas com nicho fácil, audiência enorme ou budget ilimitado. São produtores que chegaram com o mesmo cenário que você tem hoje — e saíram com um sistema funcionando.</p>
+
+    <div class="testi-list">
+      <div class="testi-item fade" style="border-top-color:rgba(247,244,238,0.07);">
+        <div class="testi-quote" style="color:rgba(247,244,238,0.8);">"Terceiro mês no automático. Fechei mais do que no meu melhor lançamento — sem fazer nada de diferente do que fiz nos dois dias."</div>
+        <div class="testi-note" style="border-left-color:rgba(247,244,238,0.1);color:rgba(247,244,238,0.25);">[ Inserir micro-história real: resultado específico, prazo, nicho ]</div>
+        <div class="testi-attr" style="color:rgba(247,244,238,0.2);">Nome · Nicho · Resultado</div>
+      </div>
+      <div class="testi-item fade" style="border-top-color:rgba(247,244,238,0.07);">
+        <div class="testi-quote" style="color:rgba(247,244,238,0.8);">"Implementei o sistema em duas semanas depois do evento. Na quarta semana já tinha o primeiro cliente que nunca tinha me seguido comprando sozinho."</div>
+        <div class="testi-note" style="border-left-color:rgba(247,244,238,0.1);color:rgba(247,244,238,0.25);">[ Inserir micro-história real: foco na primeira venda para público frio ]</div>
+        <div class="testi-attr" style="color:rgba(247,244,238,0.2);">Nome · Nicho · Resultado</div>
+      </div>
+      <div class="testi-item fade" style="border-top-color:rgba(247,244,238,0.07);">
+        <div class="testi-quote" style="color:rgba(247,244,238,0.8);">"A primeira vez que viajei sem precisar me preocupar com lançamento. Abri o celular no aeroporto e tinha vendas do dia. Foi a primeira vez em três anos que me senti livre de verdade."</div>
+        <div class="testi-note" style="border-left-color:rgba(247,244,238,0.1);color:rgba(247,244,238,0.25);">[ Inserir micro-história real: foco no momento de alívio / liberdade percebida ]</div>
+        <div class="testi-attr" style="color:rgba(247,244,238,0.2);">Nome · Nicho · Resultado</div>
+      </div>
+    </div>
+
+    <p class="fade" style="margin-top:36px;font-size:14px;font-weight:300;color:rgba(247,244,238,0.3);font-style:italic;line-height:1.65;">O Mecanismo 6D é o ponto em comum entre todos esses resultados. Não é talento. É estrutura.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 7 — FOTOS DO EVENTO COM PROMESSAS
+     Função: Tornar a experiência visual e
+     concreta. O cérebro compra o que imagina.
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow fade">O que acontece nesses dois dias</div>
+    <h2 class="headline fade">Não é uma plateia assistindo.<br><em>É uma sala construindo.</em></h2>
+    <p class="body-text fade">Cada pessoa que entra no Mecanismo 6D sai com um sistema montado — não com anotações. O que você vê abaixo não é decoração de evento. É o ambiente onde o seu motor vai ser construído.</p>
+  </div>
+
+  <div style="max-width:880px;margin:0 auto;padding:40px 32px 0;">
+    <div class="photos-grid fade">
+      <div class="photo-item">
+        <div class="photo-placeholder" style="overflow:hidden;min-height:260px;padding:0;background:var(--linen3);">
+          <div style="width:100%;height:100%;min-height:260px;background:var(--ink2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 24px,rgba(247,244,238,0.015) 24px,rgba(247,244,238,0.015) 25px);"></div><span style="font-family:var(--serif);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.18);position:relative;">Foto do evento</span></div>
+        </div>
+        <div class="photo-caption"><strong>Construção guiada, não aula.</strong> Cada pessoa no notebook, montando o seu — com suporte direto para cada decisão que trava.</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder" style="overflow:hidden;min-height:260px;padding:0;background:var(--linen3);">
+          <div style="width:100%;height:100%;min-height:260px;background:var(--ink2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 24px,rgba(247,244,238,0.015) 24px,rgba(247,244,238,0.015) 25px);"></div><span style="font-family:var(--serif);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.18);position:relative;">Foto do evento</span></div>
+        </div>
+        <div class="photo-caption"><strong>As conversas que não acontecem em curso online.</strong> Quem está nessa sala já fatura. O que circula entre eles vale mais do que qualquer aula.</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder" style="overflow:hidden;min-height:260px;padding:0;background:var(--linen3);">
+          <div style="width:100%;height:100%;min-height:260px;background:var(--ink2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 24px,rgba(247,244,238,0.015) 24px,rgba(247,244,238,0.015) 25px);"></div><span style="font-family:var(--serif);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.18);position:relative;">Foto do evento</span></div>
+        </div>
+        <div class="photo-caption"><strong>Prova ao vivo, não promessa.</strong> Os convidados não apresentam slides. Apresentam os bastidores reais do que gerou os números.</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder" style="overflow:hidden;min-height:260px;padding:0;background:var(--linen3);">
+          <div style="width:100%;height:100%;min-height:260px;background:var(--ink2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 24px,rgba(247,244,238,0.015) 24px,rgba(247,244,238,0.015) 25px);"></div><span style="font-family:var(--serif);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.18);position:relative;">Foto do evento</span></div>
+        </div>
+        <div class="photo-caption"><strong>Você não sai com um caderno cheio.</strong> Você sai com o roteiro do seu vídeo de vendas escrito — pronto para gravar na segunda-feira.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 8 — REVELE SEU MÉTODO (PARTE 1/3)
+     História + prova + por que o mercado
+     falha. Função: apresentar o mecanismo
+     único. Criar crença de que funciona.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">A virada que ninguém conta direito</div>
+
+    <p class="body-text body-text-light fade">Muita gente acha lindo a escala que vem do sangue, do suor e do esforço — e faz disso o lema da vida.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;"><strong>Eu também achava.</strong></p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">Até descobrir que existia outro tipo de escala.</p>
+
+    <div class="pull-quote pull-quote-light fade" style="margin:48px 0;">"A escala que vem do alívio."</div>
+
+    <!-- SPLIT: texto à esquerda, foto do mentor à direita -->
+    <div style="display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:start;margin:0 0 40px;" class="fade">
+      <div>
+        <p class="body-text body-text-light">Eu fui pelo mesmo caminho. Acreditei no modelo do lançamento. Trabalhei mais do que era saudável. Os resultados apareceram — mas o custo desses resultados era algo que eu estava começando a não conseguir mais pagar. Não financeiramente. Humanamente.</p>
+        <p class="body-text body-text-light" style="margin-top:20px;">Lançamentos que funcionavam e me deixavam esgotado. Lançamentos que não funcionavam e me deixavam devastado. A sensação de estar correndo numa esteira que acelerava cada vez que eu conseguia acompanhar o ritmo.</p>
+        <p class="body-text body-text-light" style="margin-top:20px;">E o pior não era o cansaço. Era olhar em volta e perceber o que o modelo estava cobrando das pessoas que mais importavam. Cada lançamento que vinha era um aviso de que eu ia sumir de novo. Eles aprenderam a esperar.</p>
+        <p class="body-text body-text-light" style="margin-top:20px;"><strong>Eu me achava no controle. Na verdade, o próximo lançamento era o meu patrão.</strong></p>
+      </div>
+      <div style="position:sticky;top:80px;">
+        <div style="position:relative;overflow:hidden;aspect-ratio:3/4;background:rgba(247,244,238,0.06);">
+          <div style="width:100%;height:100%;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--ink2) 0%,rgba(30,28,24,0.8) 100%);"><span style="font-family:var(--serif);font-size:120px;font-weight:300;font-style:italic;color:rgba(140,122,74,0.08);line-height:1;user-select:none;">6D</span></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,28,24,0.6) 0%,transparent 50%);"></div>
+          <div style="position:absolute;bottom:20px;left:20px;right:20px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(247,244,238,0.4);">[ Foto real do mentor em palco ]</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text body-text-light fade" style="display:none;">Eu fui pelo mesmo caminho. Acreditei no modelo do lançamento. Trabalhei mais do que era saudável. Os resultados apareceram — mas o custo desses resultados era algo que eu estava começando a não conseguir mais pagar. Não financeiramente. Humanamente.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">Lançamentos que funcionavam e me deixavam esgotado. Lançamentos que não funcionavam e me deixavam devastado. A sensação de estar correndo numa esteira que acelerava cada vez que eu conseguia acompanhar o ritmo.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">E o pior não era o cansaço. Era olhar em volta e perceber o que o modelo estava cobrando das pessoas que mais importavam. Cada lançamento que vinha era um aviso de que eu ia sumir de novo. Eles aprenderam a esperar.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;"><strong>Eu me achava no controle. Na verdade, o próximo lançamento era o meu patrão.</strong></p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">Então eu decidi parar de trabalhar mais — e construir diferente. Um único conteúdo. Um único funil. Rodando todos os dias para desconhecidos, sem que eu precisasse aparecer, gravar, fazer live, monitorar, torcer.</p>
+
+    <div style="margin:48px 0;padding:32px;background:rgba(247,244,238,0.05);border-left:1px solid var(--gold);">
+      <div class="fade" style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.25);margin-bottom:16px;">O resultado — documentado</div>
+      <div class="fade" style="font-family:var(--serif);font-size:clamp(40px,7vw,72px);font-weight:600;color:var(--linen);line-height:1;margin-bottom:12px;">8 dígitos</div>
+      <div class="fade" style="font-size:14px;font-weight:300;color:rgba(247,244,238,0.5);line-height:1.7;">Nos três anos seguintes, esse sistema gerou oito dígitos. Com um único conteúdo para público frio. No automático. Sem lançamento ativo. Sem depender de algoritmo. Sem a montanha-russa.</div>
+    </div>
+
+    <p class="body-text body-text-light fade">A era do "confia em mim" acabou. Você quer números reais, lógica que faça sentido, prova documentada. Então vou mostrar.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">Não é sorte. Não é nicho fácil. É uma estrutura específica — e é essa estrutura que você vai montar nos dias 11 e 12 de abril.</p>
+  </div>
+</section>
+
+
+<!-- BLOCO 8 — PARTE 2/3: Por que as soluções do mercado não resolvem -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow fade">Por que as soluções do mercado não resolvem</div>
+    <h2 class="headline fade">Sair do lançamento<br><em>não é a mesma coisa<br>que sair da prisão.</em></h2>
+
+    <p class="body-text fade">Quando alguém decide sair do lançamento, o mercado tem uma resposta pronta. Um especialista aparece em vídeo, promete que o perpétuo vai te libertar, te vende noventa e oito aulas para aprender a montar um funil que vende no automático.</p>
+    <p class="body-text fade" style="margin-top:20px;">Você assiste. Você anota. Você sai com um caderno cheio de teoria e uma lista de tarefas que vai levar meses para executar — sozinho, sem saber se está fazendo certo.</p>
+    <p class="body-text fade" style="margin-top:20px;">Três meses depois, o funil ainda não está no ar. E você está na lista de espera do próximo lançamento.</p>
+    <p class="body-text fade" style="margin-top:20px;">Porque o perpétuo convencional exige o que o lançamento também exige: produção contínua de conteúdo para aquecer audiência, presença constante para manter relevância, dependência de algoritmo para distribuir. Você trocou a corrida do lançamento pela corrida da produção. <strong>Trocou seis por meia dúzia.</strong></p>
+
+    <div class="rule fade"></div>
+
+    <div class="eyebrow fade">O contexto que tornou urgente encontrar outra saída</div>
+
+    <div class="failure-list">
+      <div class="failure-item fade">
+        <div class="failure-label">Falha estrutural do modelo</div>
+        <div class="failure-title">O modelo não escala — ele se deteriora.</div>
+        <div class="failure-body">O público mais quente já comprou nos primeiros ciclos. Cada lançamento novo precisa de mais investimento para alcançar o mesmo resultado. Existe um teto invisível que aperta a cada ciclo.</div>
+      </div>
+      <div class="failure-item fade">
+        <div class="failure-label">Reforma tributária 2025</div>
+        <div class="failure-title">CBS (0,9%) + IBS (0,1%) já estão em fase de testes.</div>
+        <div class="failure-body">Nova camada de complexidade para infoprodutores. Os custos de publicidade digital subiram aproximadamente 12% com a inclusão dos novos tributos. O modelo que já tinha retorno apertado ficou insustentável para quem não tem a estrutura certa.</div>
+      </div>
+      <div class="failure-item fade">
+        <div class="failure-label">O que o avatar busca agora</div>
+        <div class="failure-title">Previsibilidade — não empolgação.</div>
+        <div class="failure-body">Ele não compra mais com entusiasmo. Compra com prova. Quer números reais, cases documentados, lógica que faça sentido matemático. A era do "confia em mim" acabou. Começou a era do "me mostra".</div>
+      </div>
+    </div>
+
+    <div class="dark-block fade">
+      <div class="dark-block-serif">Noventa e oito aulas não montam um sistema.</div>
+      <div class="dark-block-serif" style="color:rgba(247,244,238,0.4);">Dois dias de construção guiada montam.</div>
+      <div class="dark-block-sub" style="margin-top:16px;">Existe uma diferença entre aprender sobre o funil e sair do evento com o funil montado nas suas mãos — pronto para rodar na segunda-feira, vendendo para desconhecidos, com 1 único conteúdo.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 8 — PARTE 3/3: O Mecanismo + 6D
+     Posicionamento central. 1 único conteúdo.
+     Todos os dias. Para desconhecidos.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">São Paulo &ensp;·&ensp; 11 e 12 de Abril &ensp;·&ensp; Wyndham Ibirapuera &ensp;·&ensp; Máximo 100 pessoas</div>
+    <h2 class="headline headline-light fade">O faturamento do lançamento.<br>Com 1 único conteúdo.<br><em>Vendendo todos os dias.<br>Para desconhecidos.<br>Enquanto você está em outro lugar.</em></h2>
+
+    <p class="body-text body-text-light fade">Não é mais um funil. É a diferença entre um foguete e um motor a diesel.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">Um foguete é lindo, barulhento, dramático — e precisa de ignição nova a cada três meses. Falha uma peça: não decola. Você já conhece esse foguete. Você já pagou caro por ele.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">O motor a diesel não tem glamour. <strong>Ele só liga, roda, e não para.</strong> Um único conteúdo. Um único funil. Vendendo todos os dias para desconhecidos que nunca ouviram seu nome — enquanto você não está lá.</p>
+
+    <div class="pull-quote pull-quote-light fade" style="margin:48px 0;">Não é preguiça. É arquitetura.</div>
+
+    <p class="body-text body-text-light fade">Imagina uma terça à noite. Você não está gravando. Não está em live. Não está monitorando o dashboard de cinco em cinco minutos. Você está jantando — de verdade, presente — e quando abre o celular antes de dormir, as vendas do dia já aconteceram. Para gente nova. Gente que não te seguia ontem.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;"><strong>Essa pessoa não trabalhou menos do que você. Ela construiu diferente.</strong></p>
+
+    <div class="rule-dark fade"></div>
+
+    <div class="eyebrow eyebrow-light fade">O que o mercado nunca te mostrou</div>
+
+    <div class="nobody-list">
+      <div class="nobody-item fade"><span class="nobody-arrow">→</span><span class="nobody-text">Como montar um perpétuo que tem a mesma força de conversão de um lançamento completo — <strong>mas que opera com um único conteúdo. Não uma biblioteca. Um único conteúdo — gravado uma vez, rodando sempre.</strong></span></div>
+      <div class="nobody-item fade"><span class="nobody-arrow">→</span><span class="nobody-text">Como validar sua oferta em 48 horas — <strong>não em seis meses de teste, não em ciclos de lançamento que apostam noventa dias em uma janela de sete.</strong></span></div>
+      <div class="nobody-item fade"><span class="nobody-arrow">→</span><span class="nobody-text">Como ter previsibilidade real — <strong>receita que cresce de forma estável, sem os altos e baixos, sem depender de algoritmo, sem a montanha-russa.</strong></span></div>
+      <div class="nobody-item fade"><span class="nobody-arrow">→</span><span class="nobody-text">Por que ninguém mostrou isso antes: <strong>porque o mercado vende complexidade. Noventa e oito aulas geram mais receita para a indústria do que dois dias que funcionam. Simplicidade não vende infoproduto. Funciona.</strong></span></div>
+    </div>
+
+    <div class="rule-dark fade"></div>
+
+    <div class="eyebrow eyebrow-light fade" style="margin-bottom:6px;">O que você vai construir nos dois dias</div>
+    <h2 class="headline headline-light fade" style="font-size:clamp(28px,4vw,44px);margin-bottom:12px;">As seis dimensões da estrutura que os cursos de noventa e oito aulas não conseguem montar para você.</h2>
+    <p class="fade" style="font-size:16px;font-weight:300;color:rgba(247,244,238,0.5);margin-bottom:40px;line-height:1.7;">Em cada dimensão, você não vai assistir a uma aula. Você vai construir a sua — presencialmente, com suporte direto, nos dois dias em São Paulo.</p>
+
+    <div class="d-list">
+      <div class="d-item fade">
+        <div class="d-letter">D1</div>
+        <div>
+          <div class="d-name">Diagnóstico de Oferta</div>
+          <div class="d-desc"><em style="color:rgba(247,244,238,0.3);display:block;margin-bottom:8px;font-size:13px;">O modelo do lançamento desperdiça tráfego porque a oferta nunca foi calibrada para público frio.</em>Com o custo de publicidade 12% mais alto em 2025, cada centavo mal direcionado custa mais do que antes. Você não vai aprender sobre diagnóstico. Você vai diagnosticar e ajustar a sua oferta — presencialmente, nos dois dias.</div>
+        </div>
+      </div>
+      <div class="d-item fade">
+        <div class="d-letter">D2</div>
+        <div>
+          <div class="d-name">Desenho do Mecanismo de Venda</div>
+          <div class="d-desc"><em style="color:rgba(247,244,238,0.3);display:block;margin-bottom:8px;font-size:13px;">O lançamento depende de audiência que já te conhece. Esta dimensão vende para quem nunca ouviu seu nome.</em>A narrativa que converte desconhecidos em compradores — sem autoridade prévia, sem relacionamento construído, sem o braço de vendas que o lançamento exige a cada ciclo.</div>
+        </div>
+      </div>
+      <div class="d-item fade">
+        <div class="d-letter">D3</div>
+        <div>
+          <div class="d-name">Desenvolvimento do Único Conteúdo</div>
+          <div class="d-desc"><em style="color:rgba(247,244,238,0.3);display:block;margin-bottom:8px;font-size:13px;">O perpétuo convencional exige produção contínua. Esta dimensão exige um único conteúdo — gravado uma vez.</em>Você vai sair do evento com o roteiro do seu vídeo de vendas escrito — pronto para gravar na semana seguinte. Esse único conteúdo vai vender todos os dias, para desconhecidos, sem que você precise aparecer.</div>
+        </div>
+      </div>
+      <div class="d-item fade">
+        <div class="d-letter">D4</div>
+        <div>
+          <div class="d-name">Distribuição via Tráfego Pago</div>
+          <div class="d-desc"><em style="color:rgba(247,244,238,0.3);display:block;margin-bottom:8px;font-size:13px;">O lançamento concentra investimento em 7 dias. Esta dimensão distribui o retorno todos os dias do mês.</em>A lógica de campanhas para funil de conteúdo único é estruturalmente diferente da lógica de tráfego para lançamento. Confundir as duas destrói o retorno. Com CBS e IBS aumentando os custos em ~12%, essa distinção se tornou financeira.</div>
+        </div>
+      </div>
+      <div class="d-item fade">
+        <div class="d-letter">D5</div>
+        <div>
+          <div class="d-name">Densificação de Receita</div>
+          <div class="d-desc"><em style="color:rgba(247,244,238,0.3);display:block;margin-bottom:8px;font-size:13px;">O lançamento busca cliente novo para cada receita adicional. Esta dimensão multiplica a receita do cliente que já entrou.</em>Como vender três, quatro, cinco vezes para a mesma pessoa — sem investir um centavo a mais em publicidade. Receita estável, crescente, previsível. Sem montanha-russa.</div>
+        </div>
+      </div>
+      <div class="d-item fade">
+        <div class="d-letter">D6</div>
+        <div>
+          <div class="d-name">Delegação e Automação</div>
+          <div class="d-desc"><em style="color:rgba(247,244,238,0.3);display:block;margin-bottom:8px;font-size:13px;">O lançamento exige o seu braço para existir. Esta dimensão roda sem ele.</em>Os fluxos que fazem o sistema operar de forma independente. IA como infraestrutura invisível — não como diferencial, como base. O motor que você monta uma vez — e que roda enquanto você está onde as pessoas que você ama estão.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="margin-top:56px;padding:28px 32px;background:rgba(247,244,238,0.05);border:1px solid rgba(247,244,238,0.08);display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between;max-width:720px;margin-left:auto;margin-right:auto;">
+    <div>
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.3);margin-bottom:6px;">Data</div>
+      <div style="font-size:18px;font-weight:600;color:var(--linen);">11 e 12 de Abril</div>
+    </div>
+    <div>
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.3);margin-bottom:6px;">Local</div>
+      <div style="font-size:18px;font-weight:600;color:var(--linen);">Wyndham Ibirapuera · São Paulo</div>
+    </div>
+    <div>
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.3);margin-bottom:6px;">Vagas</div>
+      <div style="font-size:18px;font-weight:600;color:var(--linen);">Máximo 100 pessoas</div>
+    </div>
+    <a href="#garantir" class="btn-main btn-pulse-light" style="background:var(--linen);color:var(--ink);">Garantir minha vaga — R$ 697</a>
+  </div>
+</section>
+
+
+<!-- FAIXA — Quebra tipográfica -->
+<div style="width:100%;background:var(--ink);padding:88px 40px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 48px,rgba(247,244,238,0.012) 48px,rgba(247,244,238,0.012) 49px);pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(140,122,74,0.25),transparent);"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(140,122,74,0.25),transparent);"></div>
+  <div style="position:relative;max-width:720px;margin:0 auto;text-align:center;">
+    <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(140,122,74,0.6);margin-bottom:28px;">O que você está comprando de verdade</div>
+    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,5vw,56px);font-weight:700;color:var(--linen);line-height:1.08;letter-spacing:-0.025em;">Você não está comprando<br>dois dias em São Paulo.<br><em style="font-style:italic;font-weight:300;color:rgba(247,244,238,0.45);">Está comprando todos os dias depois.</em></div>
+  </div>
+</div>
+</div>
+
+<!-- PROOF -->
+<div class="proof-block">
+  <div class="proof-num fade">8<span> dígitos</span></div>
+  <div class="proof-caption fade">Em três anos. Com 1 único conteúdo para desconhecidos. No automático. Sem lançamento ativo.</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 9 — SEGUNDA ÂNCORA DE CONVERSÃO
+     Função: Reforçar promessa no pico do
+     engajamento emocional. Segunda chance.
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow fade">O sistema que você vai levar daqui</div>
+    <h2 class="headline fade">Você entra sem o motor.<br><em>Você sai com ele montado<br>e pronto para ligar.</em></h2>
+    <p class="body-text fade">Não estamos falando de um plano que você vai executar sozinho em dois meses. Nos dois dias em São Paulo, com suporte direto e construção guiada, o sistema sai do zero e fica nas suas mãos — completo, funcional, pronto para rodar na semana seguinte.</p>
+    <p class="body-text fade" style="margin-top:16px;">Isso é o que separa dois dias presenciais de noventa e oito aulas: ao final do segundo dia, você não precisa mais decidir por onde começar. Você já começou.</p>
+
+    <div style="margin:40px 0;padding:24px 28px;background:var(--linen3);border-left:2px solid var(--gold);">
+      <div class="fade" style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Urgência real — não retórica</div>
+      <div class="fade" style="font-size:15px;font-weight:300;color:var(--stone2);line-height:1.7;">O Lote 2 está ativo em <strong style="color:var(--ink);">R$ 697</strong>. Quando essas vagas esgotarem, o próximo lote abre em <strong style="color:var(--ink);">R$ 797</strong>. O evento tem capacidade máxima de 100 pessoas — e esse limite existe para que cada participante receba atenção real, não para criar pressão artificial.</div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;" class="fade">
+      <div>
+        <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:8px;">Lote 2 · Investimento atual</div>
+        <div style="font-family:var(--serif);font-size:clamp(40px,7vw,64px);font-weight:400;color:var(--ink);line-height:1;"><sup style="font-size:20px;font-family:var(--sans);font-weight:300;vertical-align:super;">R$</sup>697</div>
+        <div style="font-size:11px;color:var(--stone);margin-top:6px;letter-spacing:0.06em;">PRÓXIMO: R$ 797 · APÓS: R$ 997</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="#garantir" class="btn-main btn-pulse">Quero entrar nessa turma — R$ 697</a>
+        <div style="font-size:10px;color:var(--stone);text-align:center;letter-spacing:0.04em;">11 e 12 de Abril · Wyndham Ibirapuera · SP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 10 — LOTES
+     Função: Urgência por escassez de preço.
+     Transformar "quando" em "agora".
+═══════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="eyebrow fade">Estrutura de lotes</div>
+    <h3 class="fade" style="font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:600;color:var(--ink);margin-bottom:10px;">O preço cresce à medida que as vagas diminuem.</h3>
+    <p class="fade" style="font-size:14px;font-weight:300;color:var(--stone2);line-height:1.65;margin-bottom:36px;max-width:440px;">Não é estratégia de marketing. É a realidade de um evento onde o número de participantes afeta diretamente a qualidade da atenção que cada um recebe.</p>
+    <div class="lotes-grid fade">
+      <div class="lote esgotado">
+        <div class="lote-num">Lote 1</div>
+        <div class="lote-price">R$ 497</div>
+        <div class="lote-status">Esgotado</div>
+      </div>
+      <div class="lote active">
+        <div class="lote-num">Lote 2 — ativo agora</div>
+        <div class="lote-price">R$ 697</div>
+        <div class="lote-status">Garantir pelo preço de hoje</div>
+        <div class="lote-badge">→ Você está aqui</div>
+      </div>
+      <div class="lote">
+        <div class="lote-num">Lote 3</div>
+        <div class="lote-price">R$ 797</div>
+        <div class="lote-status">Disponível após Lote 2</div>
+      </div>
+      <div class="lote">
+        <div class="lote-num">Lote 4</div>
+        <div class="lote-price">R$ 997</div>
+        <div class="lote-status">Última chance</div>
+      </div>
+    </div>
+    <p class="fade" style="margin-top:20px;font-size:13px;font-weight:300;color:var(--stone);font-style:italic;line-height:1.6;">Quando o Lote 2 fecha, o Lote 3 abre imediatamente em R$ 797. Não há aviso prévio. O preço muda quando as vagas acabam.</p>
+    <div class="fade" style="margin-top:32px;max-width:400px;">
+      <div class="progress-bar-wrap" style="background:var(--linen3);">
+        <div class="progress-bar-fill" style="background:var(--gold);width:68%;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">
+        <span>Lote 2 — <strong style="color:var(--ink);">68 vagas preenchidas</strong></span>
+        <span><strong style="color:var(--gold);">32 restantes</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 11 — CONTEÚDO PROGRAMÁTICO SEDUTOR
+     Função: Converter curiosidade em desejo
+     concreto. O valor precisa justificar o preço.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">O que você vai descobrir nos dois dias</div>
+    <h2 class="headline headline-light fade">Não é uma grade de aulas.<br><em>É um mapa de construção.</em></h2>
+    <p class="fade" style="font-size:16px;font-weight:300;color:rgba(247,244,238,0.45);line-height:1.7;margin-bottom:48px;max-width:520px;">Cada item abaixo não é um tópico que você vai estudar. É uma peça do sistema que você vai montar — presencialmente, com suporte direto, e sair com nas mãos.</p>
+
+    <div class="program-list">
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">Diagnóstico</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">Por que sua oferta atual não converte público frio — e o ajuste cirúrgico que muda isso</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">O erro que 90% dos produtores cometem ao tentar montar um perpétuo: usar a mesma oferta do lançamento para uma audiência estruturalmente diferente. Você vai identificar o gap e corrigir ao vivo.</div>
+        </div>
+      </div>
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">Mecanismo de venda</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">A narrativa que vende para quem nunca ouviu seu nome — sem autoridade prévia, sem relacionamento</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">Como estruturar o argumento de venda para público completamente frio — que entra sem contexto e precisa sair comprando. A diferença entre convencer quem já te conhece e converter quem nunca te viu.</div>
+        </div>
+      </div>
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">O único conteúdo</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">O roteiro do vídeo de vendas que gerou múltiplos 7 dígitos — e como adaptar para o seu nicho</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">Você vai sair do evento com o roteiro do seu vídeo de vendas escrito. Não um template genérico. O roteiro específico para o seu produto, para o seu público, com a sua voz — pronto para gravar na semana seguinte.</div>
+        </div>
+      </div>
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">Tráfego</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">A lógica de campanhas que distribui retorno todos os dias — não em uma janela de sete</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">Por que a mesma estrutura de tráfego que funciona no lançamento destrói o perpétuo. A configuração de campanhas, segmentação e budget que faz o motor funcionar de forma contínua — com custo de aquisição controlado mesmo com CBS e IBS.</div>
+        </div>
+      </div>
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">Escala no perpétuo</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">Como aumentar o faturamento sem aumentar o investimento em tráfego — usando o cliente que já entrou</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">A diferença entre crescer via aquisição e crescer via densificação. Como estruturar a jornada pós-compra para que o mesmo cliente compre três, quatro, cinco vezes — sem um centavo adicional de publicidade.</div>
+        </div>
+      </div>
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">Automação</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">Os fluxos que fazem o sistema operar sem você — IA como infraestrutura, não como diferencial</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">Não é sobre usar IA para parecer moderno. É sobre usar automação para eliminar as tarefas que consomem o seu tempo sem gerar receita. O mapa de delegação que libera você do operacional — de forma definitiva.</div>
+        </div>
+      </div>
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">Cases ao vivo</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">Os bastidores reais de quem já construiu — não slides, não teoria, não "estratégias"</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">Thiago Roas, Bruna Della Flora, Luciana Papini e Rafa Marks não vêm para ensinar conceitos. Vêm para mostrar os números reais, as decisões específicas e os erros que quase quebraram o sistema antes de funcionar.</div>
+        </div>
+      </div>
+
+      <div class="program-item fade">
+        <div class="program-arrow">→</div>
+        <div>
+          <div class="program-tag">Validação em 48h</div>
+          <div class="program-title" style="color:rgba(247,244,238,0.85);">Como saber se o sistema vai funcionar antes de investir meses construindo</div>
+          <div class="program-desc" style="color:rgba(247,244,238,0.45);">O protocolo de validação que comprova a viabilidade do perpétuo em 48 horas — não em seis meses de teste cego. Você vai aplicar isso ao seu contexto específico ainda dentro do evento.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:48px;padding:24px 28px;background:rgba(247,244,238,0.04);border-left:1px solid var(--gold);" class="fade">
+      <p style="font-size:14px;font-weight:300;color:rgba(247,244,238,0.5);line-height:1.75;">O que você acaba de ler não é o conteúdo que vai assistir. É o que você vai <strong style="color:rgba(247,244,238,0.8);">construir</strong> — peça por peça, presencialmente, nos dois dias em São Paulo. A diferença é a mesma que existe entre ler sobre natação e estar dentro d'água.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 12 — PROVA SOCIAL DETALHADA
+     Função: Transferir credibilidade de
+     quem viveu para quem está decidindo.
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow fade">As pessoas no palco</div>
+    <h2 class="headline fade">Cada convidado não veio dar uma aula.<br><em>Veio provar que funciona.</em></h2>
+
+    <div class="guest-list">
+      <div class="guest-item fade">
+        <div class="guest-avatar">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--ink2);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(140,122,74,0.06) 0%,transparent 70%);"></div><span style="font-family:var(--serif);font-size:120px;font-weight:300;font-style:italic;color:rgba(247,244,238,0.07);line-height:1;user-select:none;position:relative;">T</span></div>
+          <div class="guest-avatar-overlay"></div>
+          <div class="guest-avatar-label">[ Foto: Thiago Roas ]</div>
+        </div>
+        <div class="guest-body">
+          <div class="guest-name">Thiago Roas</div>
+          <div class="guest-role">A prova de que o tráfego escala sem a janela de sete dias</div>
+          <div class="guest-desc">Referência nacional em escalar campanhas para cinco, múltiplos cinco e seis dígitos de faturamento por dia — com previsibilidade contínua, sem depender do lançamento. Vai mostrar os bastidores de estruturas que crescem todos os dias, não em picos.</div>
+        </div>
+      </div>
+      <div class="guest-item fade">
+        <div class="guest-avatar">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--ink2);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(140,122,74,0.06) 0%,transparent 70%);"></div><span style="font-family:var(--serif);font-size:120px;font-weight:300;font-style:italic;color:rgba(247,244,238,0.07);line-height:1;user-select:none;position:relative;">B</span></div>
+          <div class="guest-avatar-overlay"></div>
+          <div class="guest-avatar-label">[ Foto: Bruna Della Flora ]</div>
+        </div>
+        <div class="guest-body">
+          <div class="guest-name">Bruna Della Flora</div>
+          <div class="guest-role">A prova de que alto valor converte sem calls de vendas</div>
+          <div class="guest-desc">Referência em estruturar ofertas de alto valor que convertem em escala — sem precisar de chamadas individuais. O gargalo que trava produtores que querem crescer sem trocar horas por receita.</div>
+        </div>
+      </div>
+      <div class="guest-item fade">
+        <div class="guest-avatar">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--ink2);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(140,122,74,0.06) 0%,transparent 70%);"></div><span style="font-family:var(--serif);font-size:120px;font-weight:300;font-style:italic;color:rgba(247,244,238,0.07);line-height:1;user-select:none;position:relative;">L</span></div>
+          <div class="guest-avatar-overlay"></div>
+          <div class="guest-avatar-label">[ Foto: Luciana Papini ]</div>
+        </div>
+        <div class="guest-body">
+          <div class="guest-name">Luciana Papini</div>
+          <div class="guest-role">A prova de que o sistema roda sem a presença do produtor</div>
+          <div class="guest-desc">Maior perfil do Brasil em automações. Status Hotmart Galaxy. Mais de dez mil gestores formados. IA como infraestrutura invisível — fluxos que operam de forma independente, enquanto você não está lá.</div>
+        </div>
+      </div>
+      <div class="guest-item fade">
+        <div class="guest-avatar">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--ink2);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(140,122,74,0.06) 0%,transparent 70%);"></div><span style="font-family:var(--serif);font-size:120px;font-weight:300;font-style:italic;color:rgba(247,244,238,0.07);line-height:1;user-select:none;position:relative;">R</span></div>
+          <div class="guest-avatar-overlay"></div>
+          <div class="guest-avatar-label">[ Foto: Rafa Marks ]</div>
+        </div>
+        <div class="guest-body">
+          <div class="guest-name">Rafa Marks</div>
+          <div class="guest-role">A prova de que o mesmo cliente compra várias vezes sem investimento adicional</div>
+          <div class="guest-desc">Um dos maiores players do marketing digital brasileiro. Como multiplicar a receita do cliente que já entrou — vendendo três, quatro, cinco vezes para a mesma pessoa, sem investir um centavo a mais em tráfego. Receita estável. Previsível.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOCO 12 — PARTE 2/2: Depoimentos textuais -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow fade">Quem já participou</div>
+    <h2 class="headline fade">Existe algo que não consigo escrever.<br><em>É a voz de quem escolheu o alívio.</em></h2>
+    <p class="subline fade">O que essas pessoas encontraram não foi motivação. Foi estrutura. E com estrutura, previsibilidade. E com previsibilidade, paz.</p>
+
+    <div class="testi-list">
+      <div class="testi-item fade">
+        <div class="testi-quote">"Primeiro mês com faturamento previsível sem lançamento ativo. Nunca pensei que ia conseguir dormir tranquilo sabendo o que ia entrar na conta."</div>
+        <div class="testi-note">[ Inserir depoimento real — foco em resultado financeiro específico e mensurável ]</div>
+        <div class="testi-attr">Nome · Nicho</div>
+      </div>
+      <div class="testi-item fade">
+        <div class="testi-quote">"Saí da montanha-russa. Hoje sei o que vai entrar na conta no mês que vem. Isso mudou a minha relação com o negócio — e com a minha família."</div>
+        <div class="testi-note">[ Inserir depoimento real — foco na previsibilidade conquistada ]</div>
+        <div class="testi-attr">Nome · Nicho</div>
+      </div>
+      <div class="testi-item fade">
+        <div class="testi-quote">"Trabalho menos. Faturo mais. Durmo tranquilo. Parece papo de guru — mas é o que acontece quando a estrutura está certa."</div>
+        <div class="testi-note">[ Inserir depoimento real — foco na redução do esforço ]</div>
+        <div class="testi-attr">Nome · Nicho</div>
+      </div>
+      <div class="testi-item fade">
+        <div class="testi-quote">"Eu já tinha tentado perpétuo antes. Não é a mesma coisa. O Mecanismo 6D tem uma lógica completamente diferente — e os resultados são completamente diferentes também."</div>
+        <div class="testi-note">[ Inserir depoimento real — foco na diferença em relação a tentativas anteriores ]</div>
+        <div class="testi-attr">Nome · Nicho</div>
+      </div>
+    </div>
+    <p class="fade" style="font-size:14px;font-weight:300;color:var(--stone);margin-top:32px;font-style:italic;line-height:1.65;">Esses resultados não são exceção. São o padrão de quem chega, constrói e implementa. A única variável: quem apareceu e montou o sistema.</p>
+
+    <div style="margin-top:48px;padding:28px 32px;background:var(--linen2);border-left:2px solid var(--gold);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-bottom:4px;">Próxima turma</div>
+        <div style="font-size:20px;font-weight:700;color:var(--ink);">11 e 12 de Abril &ensp;·&ensp; São Paulo</div>
+        <div style="font-size:13px;font-weight:300;color:var(--stone2);margin-top:4px;">Wyndham Ibirapuera &ensp;·&ensp; Máximo 100 pessoas &ensp;·&ensp; Lote 2: R$ 697</div>
+      </div>
+      <a href="#garantir" class="btn-main btn-pulse">Quero entrar nessa turma</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 13 — EMPILHAMENTO DE VALOR
+     Função: Fazer o valor percebido parecer
+     muito maior que o preço cobrado.
+═══════════════════════════════════════ -->
+<div style="background:var(--linen2);border-top:1px solid var(--linen3);border-bottom:1px solid var(--linen3);padding:40px 32px;">
+  <div class="container" style="text-align:center;">
+    <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;">O evento começa em</div>
+    <div style="display:flex;align-items:flex-end;justify-content:center;gap:6px;margin-bottom:16px;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="font-size:clamp(32px,6vw,52px);font-weight:700;color:var(--ink);line-height:1;min-width:56px;text-align:center;" id="cd2-d">00</div><div style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Dias</div></div>
+      <div style="font-size:32px;color:var(--linen4);line-height:1;padding-bottom:10px;">·</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="font-size:clamp(32px,6vw,52px);font-weight:700;color:var(--ink);line-height:1;min-width:56px;text-align:center;" id="cd2-h">00</div><div style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Horas</div></div>
+      <div style="font-size:32px;color:var(--linen4);line-height:1;padding-bottom:10px;">·</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="font-size:clamp(32px,6vw,52px);font-weight:700;color:var(--ink);line-height:1;min-width:56px;text-align:center;" id="cd2-m">00</div><div style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Minutos</div></div>
+      <div style="font-size:32px;color:var(--linen4);line-height:1;padding-bottom:10px;">·</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="font-size:clamp(32px,6vw,52px);font-weight:700;color:var(--ink);line-height:1;min-width:56px;text-align:center;" id="cd2-s">00</div><div style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Segundos</div></div>
+    </div>
+    <div style="font-size:12px;font-weight:500;color:var(--ink2);letter-spacing:0.04em;">11 e 12 de Abril &ensp;·&ensp; Wyndham Ibirapuera, São Paulo &ensp;·&ensp; Máximo 100 pessoas &ensp;·&ensp; Lote 2: R$ 697</div>
+  </div>
+</div>
+
+<section class="section section-dark" id="garantir">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">Você não está comprando um ingresso</div>
+    <h2 class="headline headline-light fade">Você está acessando o conjunto de ativos<br><em>que monta o sistema.</em></h2>
+
+    <!-- Ingresso 3D — CTA principal -->
+    <div class="ticket-scene">
+      <div class="ticket-3d dark-ticket">
+        <div class="ticket-body">
+          <div class="ticket-event-label">Ingresso Oficial</div>
+          <div class="ticket-event-name">Mecanismo 6D</div>
+          <div class="ticket-event-sub">Imersão Presencial · São Paulo</div>
+          <div class="ticket-details">
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Data</span>
+              <span class="ticket-detail-val">11 e 12 ABR</span>
+            </div>
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Local</span>
+              <span class="ticket-detail-val">Wyndham SP</span>
+            </div>
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Vagas</span>
+              <span class="ticket-detail-val">Máx. 100</span>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-perforated"></div>
+        <div class="ticket-stub">
+          <div class="ticket-stub-lote">Lote 2</div>
+          <div class="ticket-stub-dates">11–12<span>ABR 2025</span></div>
+          <div class="ticket-stub-seats">São Paulo<br>SP</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-list" style="margin-bottom:48px;">
+      <div class="offer-item fade"><div class="offer-name"><span class="offer-check">✓</span>2 dias de imersão presencial — você entra sem o sistema. Você sai com o sistema montado.</div><div class="offer-price">R$ 3.000</div></div>
+      <div class="offer-item fade"><div class="offer-name"><span class="offer-check">✓</span>Acesso presencial aos 4 convidados — cada um provando ao vivo que é possível sair da montanha-russa.</div><div class="offer-price">R$ 2.000</div></div>
+      <div class="offer-item fade"><div class="offer-name"><span class="offer-check">✓</span>Swipefile de criativos que já converteram 8 dígitos em público frio — ativos reais, prontos para modelar.</div><div class="offer-price">R$ 997</div></div>
+      <div class="offer-item fade"><div class="offer-name"><span class="offer-check">✓</span>Roteiro completo do vídeo de vendas responsável por múltiplos 7 dígitos — pronto para gravar na semana seguinte.</div><div class="offer-price">R$ 1.500</div></div>
+      <div class="offer-item fade"><div class="offer-name"><span class="offer-check">✓</span>Templates de página de vendas e upsell — estruturas que geraram R$ 8 milhões, prontas para adaptar.</div><div class="offer-price">R$ 997</div></div>
+      <div class="offer-item fade"><div class="offer-name"><span class="offer-check">✓</span>Chamada de tutoria pós-evento — para afinar o que você montou e garantir que vai rodar.</div><div class="offer-price">R$ 1.000</div></div>
+      <div class="offer-item fade"><div class="offer-name"><span class="offer-check">✓</span>Material e ferramentas de apoio — tudo que você vai precisar para construir nos dois dias e continuar depois.</div><div class="offer-price">R$ 500</div></div>
+    </div>
+
+    <div style="padding:20px 0;border-top:1px solid rgba(247,244,238,0.07);border-bottom:1px solid rgba(247,244,238,0.07);margin-bottom:40px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+      <span style="font-size:11px;color:rgba(247,244,238,0.25);letter-spacing:0.1em;text-transform:uppercase;">Valor total percebido</span>
+      <span style="font-size:13px;color:rgba(247,244,238,0.2);text-decoration:line-through;">R$ 10.994</span>
+    </div>
+
+    <div style="margin-bottom:40px;padding:32px;background:rgba(247,244,238,0.04);border-left:1px solid var(--gold);">
+      <p class="fade" style="font-family:var(--serif);font-size:clamp(18px,2.5vw,26px);font-weight:500;color:var(--linen);line-height:1.3;margin-bottom:12px;">As únicas 48 horas em que você vai precisar trabalhar duro.</p>
+      <p class="fade" style="font-size:14px;font-weight:300;color:rgba(247,244,238,0.5);line-height:1.7;">O modelo do lançamento exige trabalho duro para sempre — a cada 90 dias, de novo. O Mecanismo 6D exige trabalho duro durante 48 horas. Nos dois dias do evento, você vai construir com mais intensidade e foco do que conseguiria sozinho em dois meses. É o único momento em que o esforço concentrado faz sentido — porque depois que o motor está montado, ele roda.</p>
+    </div>
+
+    <div class="fade" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+      <div>
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,244,238,0.25);margin-bottom:10px;">Lote 2 · Seu investimento hoje</div>
+        <div class="price-display"><sup>R$</sup>697</div>
+        <div style="font-size:11px;color:rgba(247,244,238,0.25);margin-top:8px;letter-spacing:0.06em;">PRÓXIMO: R$ 797 · APÓS: R$ 997</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding-top:16px;">
+        <div class="vagas-badge"><span class="vagas-badge-dot"></span><span id="vagas-lote">Restam <strong>32 vagas</strong> neste lote</span></div>
+        <div class="btn-wrapper">
+          <div class="btn-tarja-dark">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Garantia de entrega · Compra 100% segura
+          </div>
+          <a href="#" class="btn-main btn-pulse-light" style="background:var(--linen);color:var(--ink);text-align:center;">Garantir minha vaga — R$ 697</a>
+          <div class="btn-microcopy-dark">Sim, só isso. Você garante agora e pensa no resto depois.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roi-box fade">
+      Se o sistema que você vai montar gerar <strong>R$ 10.000 por mês de forma previsível</strong> — resultado conservador para quem implementa a estrutura corretamente — você recupera o investimento em menos de 48 horas de operação.<br><br>
+      <strong>A pergunta não é se R$ 697 é muito. A pergunta é quanto custa mais um mês de montanha-russa.</strong>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 14 — BÔNUS
+     Função: Valor inesperado que funciona
+     como elemento decisório final para
+     quem está em cima do muro.
+═══════════════════════════════════════ -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">Bônus exclusivos para quem garantir vaga até o evento</div>
+    <h2 class="headline headline-light fade">Você não esperava por isso.<br><em>É exatamente por isso<br>que faz diferença.</em></h2>
+    <p class="fade" style="font-size:15px;font-weight:300;color:rgba(247,244,238,0.4);line-height:1.75;margin-bottom:48px;max-width:500px;">Cada bônus abaixo foi escolhido para resolver uma objeção específica — ou acelerar uma etapa que normalmente trava depois do evento.</p>
+
+    <div class="bonus-list">
+      <div class="bonus-item fade">
+        <div class="bonus-num">B1</div>
+        <div>
+          <div class="bonus-name">Swipefile Completo — Criativos que já converteram 8 dígitos em público frio</div>
+          <div class="bonus-desc">Não é uma pasta de "inspiração". São os criativos reais — imagens, copies e estruturas de anúncio — que geraram os oito dígitos documentados. Você vai modelar, não criar do zero. A diferença entre gastar três meses testando e começar com o que já funcionou.</div>
+          <span class="bonus-value">Valor: R$ 997</span>
+        </div>
+      </div>
+      <div class="bonus-item fade">
+        <div class="bonus-num">B2</div>
+        <div>
+          <div class="bonus-name">Templates de Página de Vendas e Upsell — estruturas que geraram R$ 8 milhões</div>
+          <div class="bonus-desc">A arquitetura das páginas que fecharam os oito dígitos — com anotações explicando cada decisão de copy e estrutura. Você vai adaptar para o seu nicho com a lógica de quem já sabe o que funciona para público frio.</div>
+          <span class="bonus-value">Valor: R$ 997</span>
+        </div>
+      </div>
+      <div class="bonus-item fade">
+        <div class="bonus-num">B3</div>
+        <div>
+          <div class="bonus-name">Chamada de Tutoria Pós-Evento — para afinar o que você montou e garantir que vai rodar</div>
+          <div class="bonus-desc">Trinta dias depois do evento, quando o sistema está em operação, surgem as dúvidas reais. Esta chamada existe para esse momento. Não é um bônus genérico de "acesso ao suporte" — é a sessão de afinação que garante que o motor não trava na largada.</div>
+          <span class="bonus-value">Valor: R$ 1.000</span>
+        </div>
+      </div>
+      <div class="bonus-item fade">
+        <div class="bonus-num">B4</div>
+        <div>
+          <div class="bonus-name">Mapa de Automação com IA — os fluxos que fazem o sistema rodar enquanto você não está lá</div>
+          <div class="bonus-desc">O mapa visual dos fluxos de automação aplicados ao Mecanismo 6D — com ferramentas, configurações e lógica de cada etapa. Você vai saber exatamente o que delegar para a máquina e o que manter humano. A infraestrutura invisível que sustenta o sistema.</div>
+          <span class="bonus-value">Valor: R$ 697</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;padding:24px 28px;background:rgba(247,244,238,0.04);border-left:1px solid var(--gold);" class="fade">
+      <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px;">Total em bônus</div>
+      <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:rgba(247,244,238,0.2);text-decoration:line-through;margin-bottom:8px;">R$ 3.691</div>
+      <div style="font-size:14px;font-weight:300;color:rgba(247,244,238,0.4);line-height:1.6;">Incluídos para quem garantir vaga no Lote 2. Sem custo adicional. Sem asterisco.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 15 — IDENTIDADE E PERTENCIMENTO
+     Função: Vender a identidade do grupo.
+     O leitor compra o desejo de pertencer.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">Para quem é o Mecanismo 6D</div>
+    <h2 class="headline headline-light fade">Não é para quem quer motivação.<br><em>É para quem já sabe que<br>o problema é estrutural.</em></h2>
+
+    <p class="body-text body-text-light fade">Quem vai a esse evento não precisa ser convencido de que o lançamento tem um prazo de validade. Já viveu essa expiração. Já pagou o preço. Já entendeu que o problema não é esforço — é o modelo.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">São produtores que já faturaram, que sabem o que é um mês bom — e que estão cansados de não saber quando o próximo vai acontecer. Que já tentaram o perpétuo convencional e perceberam que era só uma outra versão da mesma corrida.</p>
+    <p class="body-text body-text-light fade" style="margin-top:20px;">Que chegam querendo construir — não ouvir sobre construção.</p>
+
+    <div class="identity-grid fade" style="margin-top:48px;">
+      <div class="identity-cell">
+        <div class="identity-cell-icon">→</div>
+        <div class="identity-cell-title">Você já fatura. Quer que seja previsível.</div>
+        <div class="identity-cell-body">Não está começando do zero. Tem produto, tem audiência, tem resultado — mas sabe que o próximo mês depende do próximo esforço.</div>
+      </div>
+      <div class="identity-cell">
+        <div class="identity-cell-icon">→</div>
+        <div class="identity-cell-title">Você quer prova, não promessa.</div>
+        <div class="identity-cell-body">Não acredita mais em "estratégias". Quer ver os números, entender a lógica, replicar o que funcionou para outro produtor — no seu contexto específico.</div>
+      </div>
+      <div class="identity-cell">
+        <div class="identity-cell-icon">→</div>
+        <div class="identity-cell-title">Você sabe o que está perdendo.</div>
+        <div class="identity-cell-body">Não é só dinheiro. É presença. É a capacidade de estar onde as pessoas que você ama estão — sem o lançamento concorrendo pela sua atenção.</div>
+      </div>
+      <div class="identity-cell">
+        <div class="identity-cell-icon">→</div>
+        <div class="identity-cell-title">Você vai construir, não assistir.</div>
+        <div class="identity-cell-body">Está disposto a passar dois dias intensos de trabalho presencial — porque entende que essas 48 horas são o único esforço concentrado necessário antes de o motor rodar sozinho.</div>
+      </div>
+    </div>
+
+    <p class="fade" style="margin-top:48px;font-family:var(--serif);font-size:clamp(20px,3vw,30px);font-weight:300;font-style:italic;color:rgba(247,244,238,0.6);line-height:1.4;padding:0 0 0 28px;border-left:1px solid rgba(247,244,238,0.12);">Cem pessoas nessa sala significa cem produtores que pensam igual a você. Que entendem o que você está construindo. Que vão virar parceiros, referências e prova social — não concorrentes.</p>
+
+    <div class="who-list" style="margin-top:48px;">
+      <div class="who-item fade"><span class="who-check">✓</span><span>Especialistas que querem vender todos os dias para desconhecidos — com 1 único conteúdo, no automático, sem depender de live ou algoritmo.</span></div>
+      <div class="who-item fade"><span class="who-check">✓</span><span>Quem está cansado da montanha-russa e quer sair dos altos e baixos com previsibilidade real — receita estável, crescente, sem surpresas.</span></div>
+      <div class="who-item fade"><span class="who-check">✓</span><span>Quem já vende, mas precisa de uma estrutura mais sólida — e não quer mais apostar noventa dias em sete dias perfeitos.</span></div>
+      <div class="who-item fade"><span class="who-check">✓</span><span>Quem quer prova, não promessa — cases documentados, lógica que faça sentido matemático, resultado replicável.</span></div>
+    </div>
+    <a href="#garantir" class="btn-main btn-pulse-light fade" style="background:var(--linen);color:var(--ink);margin-top:32px;">Esse sou eu — quero garantir minha vaga</a>
+    <div class="fade" style="margin-top:14px;font-size:12px;font-weight:300;color:rgba(247,244,238,0.25);letter-spacing:0.04em;">11 e 12 de Abril &ensp;·&ensp; Wyndham Ibirapuera, São Paulo &ensp;·&ensp; Lote 2: R$ 697</div>
+  </div>
+</section>
+
+
+<!-- FAIXA — Quebra tipográfica família -->
+<div style="width:100%;background:var(--moss);padding:72px 40px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 56px,rgba(247,244,238,0.018) 56px,rgba(247,244,238,0.018) 57px);pointer-events:none;"></div>
+  <div style="position:relative;max-width:640px;">
+    <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(247,244,238,0.3);margin-bottom:20px;">O que muda depois</div>
+    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(24px,4vw,48px);font-weight:700;color:var(--linen);line-height:1.1;letter-spacing:-0.02em;">Sextas-feiras de volta.<br><em style="font-style:italic;font-weight:300;color:rgba(247,244,238,0.45);">Finalmente presentes.</em></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     BLOCO 16 — BENEFÍCIOS PÓS-EVENTO
+     Função: Mostrar a vida depois da
+     transformação. Vender o resultado,
+     não o evento.
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start;">
+      <div>
+        <div class="eyebrow fade">O que muda depois dos dois dias</div>
+    <h2 class="headline fade">Você não está comprando<br><em>o que acontece em Abril.<br>Está comprando o que<br>acontece No Resto Do Ano.</em></h2>
+    <p class="body-text fade">O evento dura dois dias. O sistema que você vai construir nele dura anos. O que está listado abaixo não é o que você vai aprender — é o que vai ser diferente na sua vida a partir da semana seguinte.</p>
+
+    <div class="benefit-list" style="margin-top:40px;">
+      <div class="benefit-item fade">
+        <div class="benefit-dot"></div>
+        <div class="benefit-text"><strong>Receita que entra todos os dias — inclusive nos dias em que você não trabalha.</strong> Não um mês bom depois de um trimestre de esforço. Uma linha de receita constante, crescente, previsível. Que você consegue planejar. Que cobre o que precisa ser coberto antes de você acordar.</div>
+      </div>
+      <div class="benefit-item fade">
+        <div class="benefit-dot"></div>
+        <div class="benefit-text"><strong>A primeira viagem sem abrir o laptop.</strong> Você vai lembrar exatamente o momento em que abriu o celular em algum lugar diferente e viu que o sistema vendeu enquanto você estava ausente. Isso não é resultado financeiro. É uma mudança de identidade.</div>
+      </div>
+      <div class="benefit-item fade">
+        <div class="benefit-dot"></div>
+        <div class="benefit-text"><strong>A conversa que você não precisa mais ter.</strong> Nunca mais dizer "agora não dá, estou em lançamento" para alguém que importa. Porque o sistema não precisa que você suma para funcionar.</div>
+      </div>
+      <div class="benefit-item fade">
+        <div class="benefit-dot"></div>
+        <div class="benefit-text"><strong>Custo de aquisição controlado mesmo com a reforma tributária.</strong> Com a estrutura certa para público frio, o aumento de 12% nos custos de publicidade não destrói a margem — porque o modelo foi calibrado para esse ambiente, não para o de 2022.</div>
+      </div>
+      <div class="benefit-item fade">
+        <div class="benefit-dot"></div>
+        <div class="benefit-text"><strong>Clareza sobre o próximo passo — todos os dias.</strong> Não mais a paralisia de não saber se o problema foi a copy, o público, o produto ou o timing. O sistema tem métricas claras. Quando algo não funciona, você sabe exatamente onde olhar.</div>
+      </div>
+      <div class="benefit-item fade">
+        <div class="benefit-dot"></div>
+        <div class="benefit-text"><strong>O crescimento que vem do alívio — não do esgotamento.</strong> Você vai descobrir que é possível fazer mais sem trabalhar mais. Que o teto do modelo anterior não era o teto do seu potencial. Era o teto do modelo.</div>
+      </div>
+      <div class="benefit-item fade">
+        <div class="benefit-dot"></div>
+        <div class="benefit-text"><strong>Um ativo que cresce sozinho — não um emprego disfarçado de negócio.</strong> Um sistema que vende enquanto você dorme, viaja, descansa — ou simplesmente vive — não é promessa de guru. É o que acontece quando a arquitetura está certa. É o que você vai construir em Abril.</div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <!-- FOTO PAI + FILHO -->
+      <div style="position:sticky;top:80px;">
+        <div style="overflow:hidden;aspect-ratio:4/5;">
+<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--ink2);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(74,82,64,0.15) 0%,transparent 70%);"></div><span style="font-family:var(--serif);font-size:80px;font-weight:300;font-style:italic;color:rgba(247,244,238,0.06);line-height:1;user-select:none;position:relative;">família</span></div>
+        </div>
+        <div style="padding:14px 0 0;font-size:11px;font-weight:300;color:var(--stone);font-style:italic;line-height:1.6;">"Cada lançamento era um aviso de que eu ia sumir de novo. Eles aprenderam a esperar."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 17 — TERCEIRA ÂNCORA DE CONVERSÃO
+     Função: Custo de NÃO participar.
+     Intensidade máxima de urgência.
+═══════════════════════════════════════ -->
+<section class="section section-darker">
+  <div class="container">
+    <h2 class="headline headline-light fade" style="margin-bottom:48px;">Como você vai se sentir<br>na segunda-feira,<br><em>14 de Abril?</em></h2>
+    <div class="decision-grid fade">
+      <div class="decision-col neg">
+        <div class="decision-col-label">Sem ter ido</div>
+        <div class="decision-items">
+          <div class="decision-it"><span class="di-mark">✗</span><span>Mesmo dashboard. Mesma incerteza sobre o próximo mês.</span></div>
+          <div class="decision-it"><span class="di-mark">✗</span><span>Mesma montanha-russa. Um mês bom, três no vermelho.</span></div>
+          <div class="decision-it"><span class="di-mark">✗</span><span>Mesma dependência de lançamento — e de algoritmo.</span></div>
+          <div class="decision-it"><span class="di-mark">✗</span><span>A consciência de que você tinha a oportunidade — e deixou passar.</span></div>
+        </div>
+      </div>
+      <div class="decision-col pos">
+        <div class="decision-col-label">Tendo ido</div>
+        <div class="decision-items">
+          <div class="decision-it"><span class="di-mark">✓</span><span>Oferta revisada. Roteiro do vídeo de vendas pronto para gravar.</span></div>
+          <div class="decision-it"><span class="di-mark">✓</span><span>Funil configurado. 1 único conteúdo pronto para rodar.</span></div>
+          <div class="decision-it"><span class="di-mark">✓</span><span>Plano de tráfego definido. Sem depender de janela de sete dias.</span></div>
+          <div class="decision-it"><span class="di-mark">✓</span><span>O sistema que vende enquanto você está onde as pessoas que ama estão.</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="fade" style="font-size:15px;font-weight:300;color:rgba(247,244,238,0.5);line-height:1.7;margin-bottom:40px;max-width:520px;">Todo mundo sai de um evento de marketing com anotações.<br>Quem vai ao Mecanismo 6D sai com um sistema montado.</p>
+    <a href="#garantir" class="btn-main btn-pulse-light fade" style="background:var(--linen);color:var(--ink);">Esse é meu momento — quero garantir minha vaga</a>
+    <div style="margin-top:24px;font-size:12px;color:rgba(247,244,238,0.25);letter-spacing:0.08em;text-transform:uppercase;">11 e 12 de Abril &ensp;·&ensp; Wyndham Ibirapuera &ensp;·&ensp; São Paulo &ensp;·&ensp; Máximo 100 pessoas</div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 18 — VÍDEO DEMONSTRATIVO
+     Função: Prova visual de que o evento
+     acontece de verdade e entrega o que
+     promete. Reduz risco percebido.
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow fade">Antes de decidir — veja como foi</div>
+    <h2 class="headline fade">Palavras descrevem.<br><em>Imagem prova.</em></h2>
+    <p class="body-text fade">O que está neste vídeo não foi editado para parecer melhor do que foi. É o ambiente real, as pessoas reais, o que foi construído — e o que cada participante saiu com nas mãos.</p>
+    <p class="body-text fade" style="margin-top:12px;">Três minutos que respondem mais do que qualquer página poderia.</p>
+
+    <div class="video-placeholder fade" style="margin-top:36px;" role="button" aria-label="Assistir vídeo da última edição">
+      <div class="video-play-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(247,244,238,0.5)" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <div class="video-placeholder-label">[ Inserir vídeo de bastidores da última edição ]</div>
+    </div>
+
+    <p class="fade" style="margin-top:28px;font-size:14px;font-weight:300;color:var(--stone);line-height:1.7;font-style:italic;">O ambiente muda o que você constrói. Dois dias fora da rotina, em uma sala com outras pessoas que estão fazendo o mesmo, produz em você algo que nenhum curso online consegue produzir.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 19 — FOTOS DEMONSTRATIVAS
+     Função: Provas visuais estáticas que
+     o visitante examina com calma.
+     Complementa o vídeo.
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow fade">Registros das últimas edições</div>
+    <h2 class="headline fade">A sala que muda a postura<br><em>de quem entra nela.</em></h2>
+    <p class="body-text fade">Não é uma palestra com plateia. É uma sala de construção com no máximo cem pessoas — onde cada participante sai com algo concreto nas mãos.</p>
+  </div>
+
+  <div style="max-width:880px;margin:0 auto;padding:40px 32px 0;">
+    <div class="photos-grid-alt fade">
+      <div class="photo-item">
+        <div class="photo-placeholder" style="background:var(--linen3);min-height:200px;align-items:center;justify-content:center;">
+          <span style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">[ Foto da sala ]</span>
+        </div>
+        <div class="photo-caption"><strong>Máximo 100 pessoas.</strong> O limite não é marketing. É o que garante que cada participante tem acesso direto a quem está na frente da sala.</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder" style="background:var(--linen4);min-height:200px;align-items:center;justify-content:center;">
+          <span style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">[ Foto de networking ]</span>
+        </div>
+        <div class="photo-caption"><strong>As conexões que não acontecem online.</strong> Parcerias, referências e prova social que emergem quando cem produtores de alto nível estão no mesmo espaço.</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder" style="background:var(--linen3);min-height:200px;align-items:center;justify-content:center;">
+          <span style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">[ Foto de construção ]</span>
+        </div>
+        <div class="photo-caption"><strong>Construção ao vivo.</strong> Cada pessoa com o laptop aberto, montando o sistema real — não tomando nota para fazer depois.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 20 — DEPOIMENTOS EM VÍDEO
+     Função: Prova social em vídeo tem
+     impacto emocional superior ao texto.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="eyebrow eyebrow-light fade">A voz de quem passou por isso</div>
+    <h2 class="headline headline-light fade">Eu posso escrever qualquer coisa.<br><em>Eles só podem dizer<br>o que viveram.</em></h2>
+    <p class="fade" style="font-size:15px;font-weight:300;color:rgba(247,244,238,0.4);line-height:1.75;margin-bottom:48px;max-width:500px;">Esses vídeos não foram roteirizados. A única instrução foi: fala o que você vive agora — e o que era antes.</p>
+  </div>
+
+  <div style="max-width:880px;margin:0 auto;padding:0 32px;">
+    <div class="video-testi-grid fade">
+      <div class="video-testi-item">
+        <div class="video-testi-placeholder">
+          <div class="video-play-btn" style="border-color:rgba(247,244,238,0.12);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(247,244,238,0.3)" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="video-testi-info">
+          <div class="video-testi-name">[ Nome do participante ]</div>
+          <div class="video-testi-result">[ Resultado específico em prazo determinado — ex: primeiro mês fechado em R$ X sem lançamento ativo ]</div>
+        </div>
+      </div>
+      <div class="video-testi-item">
+        <div class="video-testi-placeholder">
+          <div class="video-play-btn" style="border-color:rgba(247,244,238,0.12);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(247,244,238,0.3)" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="video-testi-info">
+          <div class="video-testi-name">[ Nome do participante ]</div>
+          <div class="video-testi-result">[ Resultado específico — ex: primeiro cliente de público frio comprou 30 dias após o evento ]</div>
+        </div>
+      </div>
+      <div class="video-testi-item">
+        <div class="video-testi-placeholder">
+          <div class="video-play-btn" style="border-color:rgba(247,244,238,0.12);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(247,244,238,0.3)" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="video-testi-info">
+          <div class="video-testi-name">[ Nome do participante ]</div>
+          <div class="video-testi-result">[ Resultado específico — ex: saiu da montanha-russa / faturou no automático pela primeira vez ]</div>
+        </div>
+      </div>
+      <div class="video-testi-item">
+        <div class="video-testi-placeholder">
+          <div class="video-play-btn" style="border-color:rgba(247,244,238,0.12);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(247,244,238,0.3)" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <div class="video-testi-info">
+          <div class="video-testi-name">[ Nome do participante ]</div>
+          <div class="video-testi-result">[ Resultado específico — ex: comparação antes e depois / mudança de qualidade de vida documentada ]</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="fade" style="margin-top:32px;font-size:13px;font-weight:300;color:rgba(247,244,238,0.25);font-style:italic;line-height:1.65;text-align:center;">Para coletar depoimentos em vídeo: perguntar (1) o que tentou antes e não funcionou, (2) o resultado específico após o evento, (3) o que mudou além dos números. Gravar em ambiente neutro, horizontal, sem filtros.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 21 — EMPILHAMENTO GERAL CONSOLIDADO
+     Função: Recapitular o valor total de
+     forma acumulativa e avassaladora.
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow fade">Tudo que você leva</div>
+    <h2 class="headline fade">Uma vez que você vê o que<br><em>R$ 697 compra,<br>a pergunta muda de lado.</em></h2>
+    <p class="body-text fade">Não é "será que vale R$ 697?" — é "quanto custaria construir tudo isso de outra forma?" Veja o cálculo.</p>
+
+    <div class="stack-total fade">
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span>2 dias de imersão presencial com construção guiada</span><span class="stack-item-val">R$ 3.000</span></div>
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span>Acesso presencial a Thiago Roas, Bruna Della Flora, Luciana Papini e Rafa Marks</span><span class="stack-item-val">R$ 2.000</span></div>
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span>Swipefile de criativos que converteram 8 dígitos</span><span class="stack-item-val">R$ 997</span></div>
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span>Roteiro do vídeo de vendas escrito ao vivo — pronto para gravar</span><span class="stack-item-val">R$ 1.500</span></div>
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span>Templates de página de vendas e upsell — estruturas de R$ 8 milhões</span><span class="stack-item-val">R$ 997</span></div>
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span>Chamada de tutoria pós-evento — afinação dos 30 dias seguintes</span><span class="stack-item-val">R$ 1.000</span></div>
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span>Material e ferramentas de apoio para os dois dias e a implementação</span><span class="stack-item-val">R$ 500</span></div>
+      <div class="stack-row"><span class="stack-item-name"><span class="stack-check">✓</span><em style="font-style:normal;">Bônus:</em> Mapa completo de automação com IA</span><span class="stack-item-val">R$ 697</span></div>
+
+      <div class="stack-total-line">
+        <span class="stack-total-label">Valor total percebido</span>
+        <span class="stack-total-val">R$ 14.691</span>
+      </div>
+
+      <div class="stack-cta-line">
+        <div>
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(247,244,238,0.25);margin-bottom:8px;">Lote 2 · Seu investimento hoje</div>
+          <div class="stack-cta-price"><sup>R$</sup>697</div>
+          <div style="font-size:11px;color:rgba(247,244,238,0.2);margin-top:6px;letter-spacing:0.06em;">VOCÊ ECONOMIZA R$ 14.000 EM RELAÇÃO AO VALOR REAL</div>
+        </div>
+        <a href="#garantir" class="btn-main btn-pulse-light" style="background:var(--linen);color:var(--ink);">Acessar tudo isso — R$ 697</a>
+      </div>
+    </div>
+
+    <p class="fade" style="margin-top:24px;font-size:14px;font-weight:300;color:var(--stone2);line-height:1.7;font-style:italic;">Se o sistema gerar R$ 10.000 no primeiro mês de operação — resultado conservador — o retorno sobre o investimento é de 1.335%. Em 30 dias. Com um único conteúdo. Para desconhecidos.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 22 — ANCORAGEM FINAL DE PREÇO
+     Função: Última âncora antes do local.
+     Preço atual + urgência final de lote.
+═══════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <div class="eyebrow eyebrow-light fade">Última chance no Lote 2</div>
+    <h2 class="headline headline-light fade" style="text-align:center;">O sistema que você vai construir<br><em>custa mais caro amanhã<br>do que custa agora.</em></h2>
+    <p class="fade" style="font-size:16px;font-weight:300;color:rgba(247,244,238,0.45);line-height:1.75;margin-bottom:40px;max-width:460px;margin-left:auto;margin-right:auto;">Não porque o evento mudou. Porque o lote fechou e o próximo tem menos vagas — e um preço 14% mais alto.</p>
+
+    <div style="display:flex;justify-content:center;gap:1px;margin:0 auto 40px;max-width:400px;background:rgba(247,244,238,0.06);" class="fade">
+      <div style="background:rgba(247,244,238,0.04);padding:28px 32px;flex:1;text-align:center;">
+        <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(247,244,238,0.25);margin-bottom:8px;">Hoje · Lote 2</div>
+        <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--linen);line-height:1;">R$ 697</div>
+        <div style="font-size:10px;color:var(--gold2);margin-top:6px;letter-spacing:0.06em;">ATIVO AGORA</div>
+      </div>
+      <div style="background:rgba(247,244,238,0.02);padding:28px 32px;flex:1;text-align:center;">
+        <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(247,244,238,0.12);margin-bottom:8px;">Próximo · Lote 3</div>
+        <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:rgba(247,244,238,0.2);line-height:1;">R$ 797</div>
+        <div style="font-size:10px;color:rgba(247,244,238,0.15);margin-top:6px;letter-spacing:0.06em;">QUANDO LOTE 2 FECHAR</div>
+      </div>
+    </div>
+
+    <a href="#garantir" class="btn-main btn-pulse-light fade" style="background:var(--linen);color:var(--ink);">Garantir agora pelo menor preço — R$ 697</a>
+    <div class="fade" style="margin-top:14px;font-size:10px;color:rgba(247,244,238,0.2);letter-spacing:0.08em;text-transform:uppercase;">Compra 100% segura · Confirmação imediata · Suporte disponível</div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 23 — LOCAL DO EVENTO
+     Função: Tornar o evento fisicamente
+     real na imaginação do leitor.
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow fade">O local</div>
+    <h2 class="headline fade">Wyndham Ibirapuera<br><em>São Paulo</em></h2>
+    <p class="body-text fade">O ambiente importa tanto quanto o conteúdo. Dois dias fora da sua rotina, longe das distrações cotidianas, em um espaço que muda a postura de quem está lá — e muda a qualidade do que é construído.</p>
+    <p class="body-text fade" style="margin-top:16px;">O Wyndham Ibirapuera não foi escolhido pela marca. Foi escolhido pelo que produz em quem está dentro. Uma sala funcional, confortável, silenciosa — onde o único ruído é o que você está construindo.</p>
+    <p class="body-text fade" style="margin-top:16px;">É esse isolamento produtivo que permite que você faça em dois dias o que não conseguiria fazer sozinho em dois meses.</p>
+    <div class="local-grid fade">
+      <div class="local-card">
+        <div class="local-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 1 16.5 2.5L13 6 4.8 4.2 3.4 5.6l7.9 3.4-3.8 3.8-2.3-.2-1.4 1.4 3 1.5 1.5 3 1.4-1.4-.2-2.3 3.8-3.8 3.4 7.9z"/></svg></div>
+        <div class="local-card-title">De avião</div>
+        <div class="local-card-body">~20 min do Aeroporto de Congonhas e ~35 min de Guarulhos.</div>
+      </div>
+      <div class="local-card">
+        <div class="local-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v9a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+        <div class="local-card-title">De carro</div>
+        <div class="local-card-body">Av. Ibirapuera, 2534 — Moema. Estacionamento disponível no hotel.</div>
+      </div>
+      <div class="local-card">
+        <div class="local-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="local-card-title">De aplicativo</div>
+        <div class="local-card-body">Uber e 99 com ampla disponibilidade. De qualquer parte central em 20 a 30 minutos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BLOCO 24 — EMPILHAMENTO FINAL + BOTÃO
+     Função: Último bloco de conversão.
+     Contraste final. Decisão definitiva.
+═══════════════════════════════════════ -->
+<div class="footer-cta">
+  <div class="container">
+    <div class="footer-cta-eyebrow">Mecanismo 6D · Presencial · São Paulo · 11 e 12 de Abril</div>
+    <h2 class="footer-cta-headline fade">A escala que vem do alívio<br><em>não é preguiça.</em></h2>
+    <p class="fade" style="font-family:var(--subhead);font-size:clamp(28px,3.5vw,42px);font-weight:400;font-style:normal;color:rgba(247,244,238,0.55);line-height:1.4;margin-bottom:28px;">É a escolha mais inteligente que você vai fazer este ano.</p>
+    <p class="footer-cta-sub fade">Daqui a seis meses, você quer estar olhando para o mesmo painel de vendas com o mesmo nível de incerteza — apostando noventa dias em sete dias perfeitos?</p>
+    <p class="footer-cta-sub fade" style="color:rgba(247,244,238,0.7);font-weight:400;">Ou quer estar olhando para um número que cresce todos os dias — gerado por um único conteúdo, vendendo para desconhecidos, enquanto você está onde as pessoas que você ama estão?</p>
+    <div class="ticket-scene fade" style="margin:40px auto 32px;">
+      <div class="ticket-3d moss-ticket">
+        <div class="ticket-body">
+          <div class="ticket-event-label">Ingresso Oficial</div>
+          <div class="ticket-event-name">Mecanismo 6D</div>
+          <div class="ticket-event-sub">Imersão Presencial · São Paulo</div>
+          <div class="ticket-details">
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Data</span>
+              <span class="ticket-detail-val">11 e 12 ABR</span>
+            </div>
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Local</span>
+              <span class="ticket-detail-val">Wyndham SP</span>
+            </div>
+            <div class="ticket-detail-item">
+              <span class="ticket-detail-label">Vagas</span>
+              <span class="ticket-detail-val">Máx. 100</span>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-perforated"></div>
+        <div class="ticket-stub">
+          <div class="ticket-stub-lote">Lote 2</div>
+          <div class="ticket-stub-dates">11–12<span>ABR 2025</span></div>
+          <div class="ticket-stub-seats">São Paulo<br>SP</div>
+        </div>
+      </div>
+    </div>
+    <div class="fade" style="font-family:var(--serif);font-size:clamp(52px,10vw,88px);font-weight:600;color:var(--linen);line-height:1;margin-bottom:8px;"><sup style="font-size:26px;font-family:var(--sans);font-weight:300;vertical-align:super;">R$</sup>697</div>
+    <div class="fade" style="font-size:10px;color:rgba(247,244,238,0.2);margin-bottom:36px;letter-spacing:0.14em;text-transform:uppercase;">Lote 2 &ensp;·&ensp; Próximo: R$ 797 &ensp;·&ensp; Quando esse lote fechar, não volta.</div>
+    <div class="fade" style="display:inline-flex;flex-direction:column;align-items:stretch;max-width:340px;margin:0 auto;">
+      <div class="btn-tarja" style="background:rgba(107,117,96,0.6);color:rgba(247,244,238,0.8);">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra segura · Confirmação imediata
+      </div>
+      <a href="#garantir" class="btn-main btn-pulse-light" style="background:var(--linen);color:var(--ink);font-size:12px;padding:20px 52px;text-align:center;">Quero construir meu sistema em Abril</a>
+      <div class="btn-microcopy-dark">Você garante agora. Pode reler tudo depois.</div>
+    </div>
+    <div class="footer-trust fade" style="color:rgba(247,244,238,0.5);">
+      <span style="display:inline-flex;align-items:center;gap:6px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Compra 100% segura
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Confirmação imediata
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Suporte disponível
+      </span>
+    </div>
+    <div class="fade" style="margin-top:20px;font-size:10px;color:rgba(247,244,238,0.4);letter-spacing:0.06em;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      11 e 12 de Abril &ensp;·&ensp;
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Wyndham Ibirapuera &ensp;·&ensp; São Paulo &ensp;·&ensp; Máximo 100 pessoas
+    </div>
+  </div>
+</div>
+
+<footer>
+  Mecanismo 6D Presencial &ensp;·&ensp; 11 e 12 de Abril &ensp;·&ensp; Wyndham Ibirapuera &ensp;·&ensp; São Paulo
+</footer>
+
+<!-- STICKY -->
+<div class="sticky" id="sticky">
+  <div>
+    <div class="sticky-price">R$ 697</div>
+    <div class="sticky-lote">Lote 2 ativo &ensp;·&ensp; Próximo: R$ 797</div>
+  </div>
+  <a href="#garantir" class="btn-sticky">Garantir vaga →</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     CRO: TOAST — SOCIAL PROOF DINÂMICO
+═══════════════════════════════════════ -->
+<div id="social-toast">
+  <div class="toast-avatar">✓</div>
+  <div>
+    <div class="toast-text"><strong id="toast-name">Mariana S.</strong> garantiu uma vaga</div>
+    <div class="toast-time" id="toast-time">há 4 minutos · São Paulo</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CRO: EXIT POPUP
+═══════════════════════════════════════ -->
+<div id="exit-popup" role="dialog" aria-modal="true">
+  <div class="exit-popup-box">
+    <button class="exit-popup-close" id="popup-close" aria-label="Fechar">✕</button>
+    <div class="exit-popup-eyebrow">Antes de você sair</div>
+    <h2 class="exit-popup-headline">Você ainda pode entrar<br><em>pelo preço de hoje.</em></h2>
+    <p class="exit-popup-body">O Lote 2 ainda está ativo em R$ 697. Quando fechar, o próximo abre em R$ 797 — e não existe aviso prévio. Se você saiu com alguma dúvida, é isso que podemos responder agora.</p>
+    <div class="exit-popup-bonus">
+      <div class="exit-popup-bonus-label">Bônus revelado agora</div>
+      <div class="exit-popup-bonus-text">Quem garantir vaga ainda hoje recebe acesso antecipado ao Mapa de Automação com IA — antes mesmo do evento começar.</div>
+    </div>
+    <div class="btn-wrapper">
+      <div class="btn-tarja">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra 100% segura · Confirmação imediata
+      </div>
+      <a href="#garantir" class="btn-main btn-pulse" style="text-align:center;" id="popup-cta">Sim — quero garantir pelo preço de hoje</a>
+      <div class="btn-microcopy">Leva menos de 2 minutos.</div>
+    </div>
+    <div class="exit-popup-trust">11 e 12 de Abril · Wyndham Ibirapuera · São Paulo</div>
+    <button class="exit-popup-dismiss" id="popup-dismiss">Não, prefiro pagar mais caro depois</button>
+  </div>
+</div>
+
+<script>
+// Countdown
+function tick() {
+  const t = new Date('2025-04-11T09:00:00-03:00') - new Date();
+  if (t <= 0) return;
+  const pad = n => String(Math.floor(n)).padStart(2,'0');
+  const d = pad(t/86400000);
+  const h = pad((t%86400000)/3600000);
+  const m = pad((t%3600000)/60000);
+  const s = pad((t%60000)/1000);
+  ['cd-d','cd2-d'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = d; });
+  ['cd-h','cd2-h'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = h; });
+  ['cd-m','cd2-m'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = m; });
+  ['cd-s','cd2-s'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = s; });
+}
+tick(); setInterval(tick, 1000);
+
+// Sticky bar
+const sticky = document.getElementById('sticky');
+window.addEventListener('scroll', () => {
+  sticky.classList.toggle('show', window.scrollY > 500);
+});
+
+// Scroll fade
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.10 });
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+// ── CRO: TOAST — SOCIAL PROOF DINÂMICO ──
+const toastNames = [
+  { name: 'Mariana S.', city: 'São Paulo', time: 'há 2 minutos' },
+  { name: 'Rafael O.', city: 'Belo Horizonte', time: 'há 5 minutos' },
+  { name: 'Camila F.', city: 'Curitiba', time: 'há 8 minutos' },
+  { name: 'Thiago M.', city: 'Rio de Janeiro', time: 'há 11 minutos' },
+  { name: 'Juliana P.', city: 'Florianópolis', time: 'há 14 minutos' },
+  { name: 'Bruno L.', city: 'Porto Alegre', time: 'há 17 minutos' },
+  { name: 'Fernanda R.', city: 'Brasília', time: 'há 21 minutos' },
+  { name: 'Lucas A.', city: 'Salvador', time: 'há 25 minutos' },
+];
+let toastIdx = 0;
+const toast = document.getElementById('social-toast');
+const toastNameEl = document.getElementById('toast-name');
+const toastTimeEl = document.getElementById('toast-time');
+
+function showToast() {
+  const entry = toastNames[toastIdx % toastNames.length];
+  toastNameEl.textContent = entry.name;
+  toastTimeEl.textContent = entry.time + ' · ' + entry.city;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+  toastIdx++;
+}
+// Primeiro toast após 8s, depois a cada 25-45s aleatório
+setTimeout(() => {
+  showToast();
+  setInterval(showToast, Math.random() * 20000 + 25000);
+}, 8000);
+
+// ── CRO: EXIT POPUP ──
+let popupShown = false;
+const exitPopup = document.getElementById('exit-popup');
+const popupClose = document.getElementById('popup-close');
+const popupDismiss = document.getElementById('popup-dismiss');
+const popupCta = document.getElementById('popup-cta');
+
+function closePopup() {
+  exitPopup.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// Desktop: mouse leave topo
+document.addEventListener('mouseleave', (e) => {
+  if (!popupShown && e.clientY < 30 && window.scrollY > 600) {
+    popupShown = true;
+    exitPopup.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+});
+
+// Mobile: scroll para cima rápido
+let lastScrollY = 0;
+let scrollUpCount = 0;
+window.addEventListener('scroll', () => {
+  const delta = lastScrollY - window.scrollY;
+  if (delta > 8) scrollUpCount++;
+  else scrollUpCount = 0;
+  if (!popupShown && scrollUpCount > 4 && window.scrollY < 300 && window.scrollY > 0) {
+    popupShown = true;
+    exitPopup.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  lastScrollY = window.scrollY;
+}, { passive: true });
+
+popupClose.addEventListener('click', closePopup);
+popupDismiss.addEventListener('click', closePopup);
+popupCta.addEventListener('click', () => { closePopup(); });
+exitPopup.addEventListener('click', (e) => { if (e.target === exitPopup) closePopup(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup(); });
+</script>
+</body>
+</html>
